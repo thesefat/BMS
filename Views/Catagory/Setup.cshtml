@@ -1,0 +1,120 @@
+﻿@model BMS.Models.ViewModels.CatagoryVm
+<hr />
+<div class="row">
+    @using (Html.BeginForm("Setup", "Catagory", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="panel-title ">
+                            Catagory Entry
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                <label id="Name_warning_label"></label>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                <label id="Code_warning_label"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-4 col-md-offset-2">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Here Dynamic Table where instant data will be load-->
+            @*<div class="col-md-4 col-md-offset-4" >
+                    <table class="table table-responsive bg-info">
+                        <thead>
+                            <tr>
+                                <th style="color:black">Sl</th>
+                                <th style="color:black">Name</th>
+                                <th style="color:black">Code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>*@
+            <!--Dynamic Table Close-->
+            <hr />
+
+
+
+
+        </div>
+    }
+</div>
+<div class="row">
+    @if (ViewBag.Message == "Added Successfully")
+    {
+
+        <div class="green">
+            <p><strong>Success:</strong> @ViewBag.Message</p>
+        </div>
+    }
+
+</div>
+
+@*<div class="row">
+        <h4 align="center" class="bg-info">Our all catagories</h4>
+        <div class="col-md-8 col-md-offset-2">
+
+            <table class="table table-bordered ">
+                <thead>
+                    <tr>
+                        <th style="color:black">Serial No</th>
+                        <th style="color:black">Catagory Name</th>
+                        <th style="color:black"> Code Number</th>
+                        <th style="color:forestgreen" align="center">Option</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="serial_no">001</td>
+                        <td id="catagory_name">Mobile Phone</td>
+                        <td id="catagory_code">0112P</td>
+                        <td align="center" id="options"></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>*@
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/Essential/CatagoryScript.js"></script>
+}

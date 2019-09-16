@@ -1,0 +1,158 @@
+﻿@model BMS.Models.ViewModels.ProductVm
+
+<div class="row">
+    @using (Html.BeginForm("Setup", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="col-md-6 col-md-offset-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="panel-title ">
+                            Product Entry
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                <label id="Name_warning_label"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                <label id="Code_warning_label"></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Catagory, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.DropDownListFor(c => c.CatagoryId, Model.CatagoryLookUp, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ReorderLevel, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.ReorderLevel, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.UnitPrice, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.UnitPrice, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.UnitPrice, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CostPrice, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.CostPrice, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CostPrice, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+
+                                <input type="file" id="ImageData" name="ImageData" class="form-control" />
+
+                                @*@Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-4 col-md-offset-4">
+                                <input type="submit" value="Save" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr />
+
+
+
+
+        </div>
+    }
+</div>
+
+<div class="row">
+    @if (ViewBag.Message == "Product Sccessfully Added !")
+    {
+
+        <div class="green">
+            <p style="color:green"><strong>Success:</strong> @ViewBag.Message</p>
+        </div>
+    }
+</div>
+
+@*<div class="row">
+        <h4 align="center" class="bg-info">.</h4>
+        <div class="col-md-12">
+
+            <table class="table table-bordered table-striped table-hover table-responsive ">
+                <thead>
+                    <tr align="center" style="background-color:teal;color:white;font-weight:bold">
+                        <td>Serial No</td>
+                        <td>Product Name</td>
+                        <td>Product Code </td>
+                        <td>Catagory</td>
+                        <td>Reorder Level</td>
+                        <td>Image</td>
+                        <td>Description</td>
+                        <td>Option</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="serial_no">001</td>
+                        <td id="product_name">Redmi Note 7 Pro</td>
+                        <td id="product_code">897668M</td>
+                        <td id="product_catagory">Mobile Phone</td>
+                        <td id="reorder_level">25</td>
+                        <td id="image"> X </td>
+                        <td id="description"> Extreme Level demand</td>
+                        <td align="center" id="options"></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/Essential/ProductScript.js"></script>
+}

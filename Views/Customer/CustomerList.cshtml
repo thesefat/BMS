@@ -1,0 +1,36 @@
+﻿@model BMS.Models.ViewModels.CustomerVm
+
+
+<div class="row">
+    <h2 align="center" class="bg-info">ALL CUSTOMER VIEW</h2>
+    <div class="col-md-12">
+
+        <table class="table table-bordered table-striped table-hover table-responsive ">
+            <thead>
+                <tr align="center" style="background-color:teal;color:white;font-weight:bold">
+                    <td>Serial No</td>
+                    <td>Customer Name</td>
+                    <td>Contact No</td>
+                    <td>Email</td>
+                    <td>Loyality Point</td>
+                    <td>Image</td>
+                    <td>Options</td>
+
+                </tr>
+            </thead>
+            <tbody id="CustomerDetailsTable">
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+
+    <script src="~/Scripts/Essential/CustomerViewLoader.js"></script>
+}

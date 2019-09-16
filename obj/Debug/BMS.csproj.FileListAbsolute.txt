@@ -1,0 +1,330 @@
+G:\BMS\bin\BMS.dll.config
+G:\BMS\bin\BMS.dll
+G:\BMS\bin\BMS.pdb
+G:\BMS\bin\roslyn\csc.exe
+G:\BMS\bin\roslyn\csc.exe.config
+G:\BMS\bin\roslyn\csc.rsp
+G:\BMS\bin\roslyn\csi.exe
+G:\BMS\bin\roslyn\csi.exe.config
+G:\BMS\bin\roslyn\csi.rsp
+G:\BMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\BMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\BMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+G:\BMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\BMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+G:\BMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\BMS\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\BMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\BMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+G:\BMS\bin\roslyn\Microsoft.Managed.Core.targets
+G:\BMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\BMS\bin\roslyn\System.AppContext.dll
+G:\BMS\bin\roslyn\System.Collections.Immutable.dll
+G:\BMS\bin\roslyn\System.Console.dll
+G:\BMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+G:\BMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+G:\BMS\bin\roslyn\System.IO.Compression.dll
+G:\BMS\bin\roslyn\System.IO.FileSystem.dll
+G:\BMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+G:\BMS\bin\roslyn\System.IO.Pipes.AccessControl.dll
+G:\BMS\bin\roslyn\System.IO.Pipes.dll
+G:\BMS\bin\roslyn\System.Reflection.Metadata.dll
+G:\BMS\bin\roslyn\System.Security.AccessControl.dll
+G:\BMS\bin\roslyn\System.Security.Claims.dll
+G:\BMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+G:\BMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+G:\BMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+G:\BMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+G:\BMS\bin\roslyn\System.Security.Principal.Windows.dll
+G:\BMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+G:\BMS\bin\roslyn\System.ValueTuple.dll
+G:\BMS\bin\roslyn\System.Xml.ReaderWriter.dll
+G:\BMS\bin\roslyn\System.Xml.XmlDocument.dll
+G:\BMS\bin\roslyn\System.Xml.XPath.dll
+G:\BMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+G:\BMS\bin\roslyn\vbc.exe
+G:\BMS\bin\roslyn\vbc.exe.config
+G:\BMS\bin\roslyn\vbc.rsp
+G:\BMS\bin\roslyn\VBCSCompiler.exe
+G:\BMS\bin\roslyn\VBCSCompiler.exe.config
+G:\BMS\bin\Antlr3.Runtime.dll
+G:\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\BMS\bin\Microsoft.Web.Infrastructure.dll
+G:\BMS\bin\Newtonsoft.Json.dll
+G:\BMS\bin\System.Web.Helpers.dll
+G:\BMS\bin\System.Web.Mvc.dll
+G:\BMS\bin\System.Web.Optimization.dll
+G:\BMS\bin\System.Web.Razor.dll
+G:\BMS\bin\System.Web.WebPages.Deployment.dll
+G:\BMS\bin\System.Web.WebPages.dll
+G:\BMS\bin\System.Web.WebPages.Razor.dll
+G:\BMS\bin\WebGrease.dll
+G:\BMS\bin\System.Web.Helpers.xml
+G:\BMS\bin\System.Web.Mvc.xml
+G:\BMS\bin\System.Web.Optimization.xml
+G:\BMS\bin\System.Web.Razor.xml
+G:\BMS\bin\System.Web.WebPages.xml
+G:\BMS\bin\System.Web.WebPages.Deployment.xml
+G:\BMS\bin\System.Web.WebPages.Razor.xml
+G:\BMS\bin\Newtonsoft.Json.xml
+G:\BMS\bin\Antlr3.Runtime.pdb
+G:\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\BMS\obj\Debug\BMS.csprojAssemblyReference.cache
+G:\BMS\obj\Debug\BMS.csproj.CoreCompileInputs.cache
+G:\BMS\obj\Debug\BMS.csproj.CopyComplete
+G:\BMS\obj\Debug\BMS.dll
+G:\BMS\obj\Debug\BMS.pdb
+G:\BMS\bin\EntityFramework.dll
+G:\BMS\bin\EntityFramework.SqlServer.dll
+G:\BMS\bin\EntityFramework.xml
+G:\BMS\bin\EntityFramework.SqlServer.xml
+G:\BMS\obj\Debug\BMS.Migrations.CatagoryAndProductEntry.resources
+G:\BMS\obj\Debug\BMS.csproj.GenerateResource.cache
+H:\SBMS\BMS\bin\BMS.dll.config
+H:\SBMS\BMS\bin\BMS.dll
+H:\SBMS\BMS\bin\BMS.pdb
+H:\SBMS\BMS\bin\roslyn\csc.exe
+H:\SBMS\BMS\bin\roslyn\csc.exe.config
+H:\SBMS\BMS\bin\roslyn\csc.rsp
+H:\SBMS\BMS\bin\roslyn\csi.exe
+H:\SBMS\BMS\bin\roslyn\csi.exe.config
+H:\SBMS\BMS\bin\roslyn\csi.rsp
+H:\SBMS\BMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\SBMS\BMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\SBMS\BMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+H:\SBMS\BMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\SBMS\BMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+H:\SBMS\BMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\SBMS\BMS\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\SBMS\BMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+H:\SBMS\BMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+H:\SBMS\BMS\bin\roslyn\Microsoft.Managed.Core.targets
+H:\SBMS\BMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\SBMS\BMS\bin\roslyn\System.AppContext.dll
+H:\SBMS\BMS\bin\roslyn\System.Collections.Immutable.dll
+H:\SBMS\BMS\bin\roslyn\System.Console.dll
+H:\SBMS\BMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+H:\SBMS\BMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+H:\SBMS\BMS\bin\roslyn\System.IO.Compression.dll
+H:\SBMS\BMS\bin\roslyn\System.IO.FileSystem.dll
+H:\SBMS\BMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+H:\SBMS\BMS\bin\roslyn\System.IO.Pipes.AccessControl.dll
+H:\SBMS\BMS\bin\roslyn\System.IO.Pipes.dll
+H:\SBMS\BMS\bin\roslyn\System.Reflection.Metadata.dll
+H:\SBMS\BMS\bin\roslyn\System.Security.AccessControl.dll
+H:\SBMS\BMS\bin\roslyn\System.Security.Claims.dll
+H:\SBMS\BMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+H:\SBMS\BMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+H:\SBMS\BMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+H:\SBMS\BMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+H:\SBMS\BMS\bin\roslyn\System.Security.Principal.Windows.dll
+H:\SBMS\BMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+H:\SBMS\BMS\bin\roslyn\System.ValueTuple.dll
+H:\SBMS\BMS\bin\roslyn\System.Xml.ReaderWriter.dll
+H:\SBMS\BMS\bin\roslyn\System.Xml.XmlDocument.dll
+H:\SBMS\BMS\bin\roslyn\System.Xml.XPath.dll
+H:\SBMS\BMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+H:\SBMS\BMS\bin\roslyn\vbc.exe
+H:\SBMS\BMS\bin\roslyn\vbc.exe.config
+H:\SBMS\BMS\bin\roslyn\vbc.rsp
+H:\SBMS\BMS\bin\roslyn\VBCSCompiler.exe
+H:\SBMS\BMS\bin\roslyn\VBCSCompiler.exe.config
+H:\SBMS\BMS\bin\Antlr3.Runtime.dll
+H:\SBMS\BMS\bin\EntityFramework.dll
+H:\SBMS\BMS\bin\EntityFramework.SqlServer.dll
+H:\SBMS\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\SBMS\BMS\bin\Microsoft.Web.Infrastructure.dll
+H:\SBMS\BMS\bin\Newtonsoft.Json.dll
+H:\SBMS\BMS\bin\System.Web.Helpers.dll
+H:\SBMS\BMS\bin\System.Web.Mvc.dll
+H:\SBMS\BMS\bin\System.Web.Optimization.dll
+H:\SBMS\BMS\bin\System.Web.Razor.dll
+H:\SBMS\BMS\bin\System.Web.WebPages.Deployment.dll
+H:\SBMS\BMS\bin\System.Web.WebPages.dll
+H:\SBMS\BMS\bin\System.Web.WebPages.Razor.dll
+H:\SBMS\BMS\bin\WebGrease.dll
+H:\SBMS\BMS\bin\EntityFramework.xml
+H:\SBMS\BMS\bin\EntityFramework.SqlServer.xml
+H:\SBMS\BMS\bin\System.Web.Helpers.xml
+H:\SBMS\BMS\bin\System.Web.Mvc.xml
+H:\SBMS\BMS\bin\System.Web.Optimization.xml
+H:\SBMS\BMS\bin\System.Web.Razor.xml
+H:\SBMS\BMS\bin\System.Web.WebPages.xml
+H:\SBMS\BMS\bin\System.Web.WebPages.Deployment.xml
+H:\SBMS\BMS\bin\System.Web.WebPages.Razor.xml
+H:\SBMS\BMS\bin\Newtonsoft.Json.xml
+H:\SBMS\BMS\bin\Antlr3.Runtime.pdb
+H:\SBMS\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\SBMS\BMS\obj\Debug\BMS.Migrations.CatagoryAndProductEntry.resources
+H:\SBMS\BMS\obj\Debug\BMS.Migrations.ProductViewModelUpdate.resources
+H:\SBMS\BMS\obj\Debug\BMS.Migrations.ProductProtectedPerameterPublic.resources
+H:\SBMS\BMS\obj\Debug\BMS.csproj.GenerateResource.cache
+H:\SBMS\BMS\obj\Debug\BMS.csproj.CoreCompileInputs.cache
+H:\SBMS\BMS\obj\Debug\BMS.csproj.CopyComplete
+H:\SBMS\BMS\obj\Debug\BMS.dll
+H:\SBMS\BMS\obj\Debug\BMS.pdb
+D:\SBMS\BusinessManagmentSystem\BMS\bin\Newtonsoft.Json.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\BMS.dll.config
+H:\BMS\BusinessManagmentSystem\BMS\bin\BMS.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\BMS.pdb
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\csc.exe
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\csc.exe.config
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\csc.rsp
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\csi.exe
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\csi.exe.config
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\csi.rsp
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.Managed.Core.targets
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.AppContext.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Collections.Immutable.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Console.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.IO.Compression.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.IO.FileSystem.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.IO.Pipes.AccessControl.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.IO.Pipes.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Reflection.Metadata.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Security.AccessControl.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Security.Claims.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Security.Principal.Windows.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.ValueTuple.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Xml.ReaderWriter.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Xml.XmlDocument.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Xml.XPath.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\vbc.exe
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\vbc.exe.config
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\vbc.rsp
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\VBCSCompiler.exe
+H:\BMS\BusinessManagmentSystem\BMS\bin\roslyn\VBCSCompiler.exe.config
+H:\BMS\BusinessManagmentSystem\BMS\bin\Antlr3.Runtime.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\EntityFramework.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\EntityFramework.SqlServer.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\Microsoft.Web.Infrastructure.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\Newtonsoft.Json.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.Helpers.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.Mvc.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.Optimization.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.Razor.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.WebPages.Deployment.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.WebPages.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.WebPages.Razor.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\WebGrease.dll
+H:\BMS\BusinessManagmentSystem\BMS\bin\EntityFramework.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\EntityFramework.SqlServer.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.Helpers.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.Mvc.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.Optimization.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.Razor.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.WebPages.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.WebPages.Deployment.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\System.Web.WebPages.Razor.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\Newtonsoft.Json.xml
+H:\BMS\BusinessManagmentSystem\BMS\bin\Antlr3.Runtime.pdb
+H:\BMS\BusinessManagmentSystem\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\BMS\BusinessManagmentSystem\BMS\obj\Debug\BMS.csproj.CoreCompileInputs.cache
+H:\BMS\BusinessManagmentSystem\BMS\obj\Debug\BMS.csproj.CopyComplete
+H:\BMS\BusinessManagmentSystem\BMS\obj\Debug\BMS.dll
+H:\BMS\BusinessManagmentSystem\BMS\obj\Debug\BMS.pdb
+H:\BMS\BusinessManagmentSystem\BMS\obj\Debug\BMS.csprojAssemblyReference.cache
+H:\BMS\BusinessManagmentSystem\BMS\obj\Debug\BMS.Migrations.SecondInitialMigrationByPC.resources
+H:\BMS\BusinessManagmentSystem\BMS\obj\Debug\BMS.csproj.GenerateResource.cache
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\BMS.dll.config
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\BMS.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\BMS.pdb
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\csc.exe
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\csc.exe.config
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\csc.rsp
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\csi.exe
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\csi.exe.config
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\csi.rsp
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.Managed.Core.targets
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.AppContext.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Collections.Immutable.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Console.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.IO.Compression.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.IO.FileSystem.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.IO.Pipes.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Reflection.Metadata.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Security.AccessControl.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Security.Claims.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Security.Principal.Windows.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.ValueTuple.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Xml.XmlDocument.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Xml.XPath.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\vbc.exe
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\vbc.exe.config
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\vbc.rsp
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\VBCSCompiler.exe
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\roslyn\VBCSCompiler.exe.config
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\Antlr3.Runtime.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\EntityFramework.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\EntityFramework.SqlServer.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\Microsoft.Web.Infrastructure.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\Newtonsoft.Json.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.Helpers.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.Mvc.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.Optimization.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.Razor.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.WebPages.Deployment.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.WebPages.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.WebPages.Razor.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\WebGrease.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\EntityFramework.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\EntityFramework.SqlServer.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.Helpers.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.Mvc.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.Optimization.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.Razor.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.WebPages.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.WebPages.Deployment.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.WebPages.Razor.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\Newtonsoft.Json.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\Antlr3.Runtime.pdb
+D:\New folder\BusinessManagmentSystem-master\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csprojAssemblyReference.cache
+D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csproj.CoreCompileInputs.cache
+D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csproj.CopyComplete
+D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.dll
+D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.pdb
+D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.Migrations.InitialMigration.resources
+D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csproj.GenerateResource.cache

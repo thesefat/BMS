@@ -1,0 +1,32 @@
+﻿
+
+
+<div class="row">
+    <h2 align="center" class="bg-warning">TOATL CATAGORY VIEW</h2>
+    <div class="col-md-8 col-md-offset-2">
+
+        <table class="table table-bordered table-striped table-responsive table-hover">
+            <thead>
+                <tr style="background-color:teal;color:white;font-weight:bold" align="center">
+                    <td>Serial No</td>
+                    <td>Catagory Name</td>
+                    <td>Code Number</td>
+                    <td>Option</td>
+                </tr>
+            </thead>
+            <tbody id="CatsDetailsTable"></tbody>
+        </table>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/Essential/CatagoryScript.js"></script>
+    <script src="~/Scripts/Essential/CatagoryViewLoader.js"></script>
+}
