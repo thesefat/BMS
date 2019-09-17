@@ -13,11 +13,6 @@ namespace BMS.Controllers
         // GET: Purchase
 
         private readonly ProjectDbContext _db = new ProjectDbContext();
-        public ActionResult Index()
-        {
-            return View();
-        }
-
 
         #region Purchase Item from Supplier
         [HttpGet]
@@ -26,11 +21,47 @@ namespace BMS.Controllers
 
             var model = new Purchase()
             {
-                ProductLookUp = GetDefaulSelectedList(),
-                SuplierLookUp = GetDefaulSelectedList(),
+                ProductLookUp = ProductListLookUp(),
+                SuplierLookUp = SuplierListLookUp(),
             };
             return View(model);
         }
+
+
+        public List<SelectListItem> ProductListLookUp()
+        {
+            var dataList = _db.Products.ToList();
+            var selectedList = new List<SelectListItem>();
+            selectedList.AddRange(GetDefaulSelectedList());
+            foreach (var item in dataList)
+            {
+                var data = new SelectListItem()
+                {
+                    Value = item.Id.ToString(),
+                    Text = item.Name
+                };
+                selectedList.Add(data);
+            }
+            return selectedList;
+        }
+
+        public List<SelectListItem> SuplierListLookUp()
+        {
+            var dataList = _db.Supliers.ToList();
+            var selectedList = new List<SelectListItem>();
+            selectedList.AddRange(GetDefaulSelectedList());
+            foreach (var item in dataList)
+            {
+                var data = new SelectListItem()
+                {
+                    Value = item.Id.ToString(),
+                    Text = item.Name
+                };
+                selectedList.Add(data);
+            }
+            return selectedList;
+        }
+
         #endregion
 
 
@@ -46,10 +77,20 @@ namespace BMS.Controllers
             return selectList;
         }
 
-        public JsonResult GetProducts()
-        {
-            var datalist = _db.Products.ToList();
-            return Json(datalist, JsonRequestBehavior.AllowGet);
-        }
+        //public JsonResult GetProducts()
+        //{
+        //    var datalist = _db.Products.ToList();
+        //    var jsonData = datalist.Select(c => new {c.Id, c.Name, c.UnitPrice, c.CostPrice});
+        //    return Json(jsonData, JsonRequestBehavior.AllowGet);
+        //}
+
+
+
+
+
+
+
+
+
     }
 }

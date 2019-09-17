@@ -23,7 +23,17 @@ namespace BMS.Controllers
         [HttpGet]
         public ActionResult Registration()
         {
-            var model = new Suplier();
+            var model = new Suplier()
+            {
+                Name = "",
+                Code = "",
+                Photo = null,
+                Email = "",
+                Address = "",
+                ContactNo = "",
+                ContactPerson = ""
+
+            };
             return View(model);
            
         }
@@ -79,6 +89,28 @@ namespace BMS.Controllers
         public ActionResult SuplierList()
         {
             return View();
+        }
+
+
+
+        public JsonResult GetAllSuplier()
+        {
+            var datalist = _db.Supliers.ToList();
+            var jsondata= datalist.Select(c=> new {c.Name,c.ContactNo,c.Email,c.Code,c.ContactPerson,PhotoStr=ConvertByteToBase64String(c.Photo)});
+            return Json(jsondata, JsonRequestBehavior.AllowGet);
+
+        }
+
+        //Photo convert from Json object to base64string
+        public static string ConvertByteToBase64String(byte[] file)
+        {
+            if (file.Length > 1)
+            {
+                var base64 = Convert.ToBase64String(file);
+                var result = $"data:image/gif;base64,{base64}";
+                return result;
+            }
+            return null;
         }
         #endregion
         public bool IsNameAdded(string name)

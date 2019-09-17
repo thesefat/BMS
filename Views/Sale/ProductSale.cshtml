@@ -76,7 +76,9 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.PurchaseDate, "Date", htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.PurchaseDate, new { htmlAttributes = new { @class = "form-control" } })
+                                 
+                                    @Html.TextBoxFor(m => m.PurchaseDate,"Date",htmlAttributes: new { @class="form-control", type="date"})
+
                                     @Html.ValidationMessageFor(model => model.PurchaseDate, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -125,17 +127,7 @@
                     </tr>
                 </thead>
                 <tbody id="ProductsDetailsTable">
-                    <tr>
-                        <td id="serial_no">001</td>
-                        <td id="product_name">Redmi Note 7 Pro</td>
-                        <td id="product_quantity">1</td>
-                        <td id="product_unitPrice">19990</td>
-                        <td id="product_lineTotal">19990</td>
-
-
-                        <td align="center" id="options"></td>
-                    </tr>
-
+                 
                 </tbody>
             </table>
 
@@ -149,6 +141,5 @@
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/Essential/SaleProductLookUpJs.js"></script>
 
 }

@@ -25,7 +25,7 @@ namespace BMS.Controllers
         {
             var model = new Sale()
             {
-                CustomerLookUp = GetDefaulSelectedList(),
+                CustomerLookUp = CustomersListLookUp(),
                 ProductLookUp = ProductListLookUp(),
             };
             return View(model);
@@ -44,15 +44,27 @@ namespace BMS.Controllers
             return selectList;
         }
 
-        //public JsonResult GetProducts()
-        //{
-        //    var datalist = _db.Products.ToList();
-        //    return Json(datalist, JsonRequestBehavior.AllowGet);
-        //}
-
         public List<SelectListItem> ProductListLookUp()
         {
             var dataList = _db.Products.ToList();
+            var selectedList = new List<SelectListItem>();
+            selectedList.AddRange(GetDefaulSelectedList());
+            foreach (var item in dataList)
+            {
+                var data = new SelectListItem()
+                {
+                    Value = item.Id.ToString(),
+                    Text = item.Name
+                };
+                selectedList.Add(data);
+            }
+            return selectedList;
+        }
+
+
+        public List<SelectListItem> CustomersListLookUp()
+        {
+            var dataList = _db.Customers.ToList();
             var selectedList = new List<SelectListItem>();
             selectedList.AddRange(GetDefaulSelectedList());
             foreach (var item in dataList)

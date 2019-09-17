@@ -185,7 +185,6 @@
     <Content Include="Scripts\Essential\ProductViewLoader.js" />
     <Content Include="Scripts\Essential\PurchaseProductLookUp.js" />
     <Content Include="Scripts\Essential\SaleProductLookUpJs.js" />
-    <Content Include="Scripts\Essential\SuplierLookUp.js" />
     <Content Include="Scripts\Essential\SuplierUniqueChecker.js" />
     <Content Include="Scripts\Essential\SuplierViewLoader.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -225,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Supliers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

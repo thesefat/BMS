@@ -1,12 +1,12 @@
 ﻿
 $(document).ready(function () {
-    getSupliers();
+    getAllSuplier();
 });
 
-function getSupliers() {
+function getAllSuplier() {
     $.ajax({
 
-        url: "../../Buyers/GetSupliers",
+        url: "../../Buyers/GetAllSuplier",
         type: "GET",
         data: JSON.stringify(),
         contentType: "application/json;charset=utf-8",
@@ -16,14 +16,8 @@ function getSupliers() {
                 var sl = 1;
                 $.each(data, function (k, v) {
 
-                    // var index = $("#SuplierDetailsTable").children("tr").length();
-
-
                     tableRowEffect(sl, v.Name, v.ContactNo, v.Email, v.Address, v.Code, v.Photo);
                     sl++;
-
-
-
                 });
             }
 
@@ -46,8 +40,8 @@ function tableRowEffect(serial, suplierName, suplierContact, suplierEmail, supli
     var suplierEmailCell = "<td>" + suplierEmail + "</td>";
     var suplierAddressCell = "<td>" + suplierAddress + "</td>";
     var suplierCodeCell = "<td>" + suplierCode + "</td>";
-    var suplierImageCell = "<td <img src='" + suplierPhoto + "'/> </td > ";
-   
+    var suplierImageCell = "<td align='center'><img src='" + suplierPhoto + "' style='height: 120px; width: 100px;'/></td >";
+
 
     var options = `<td align="center"><button type="button" class="btn btn-success" id="Edit">
                         <span class="glyphicon glyphicon-pencil"></span>
