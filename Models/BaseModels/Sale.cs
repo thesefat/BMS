@@ -13,6 +13,7 @@ namespace BMS.Models.BaseModels
         public DateTime PurchaseDate { get; set; }
         public long CustomerId { get; set; }
         public virtual ICollection<SaleDetails> SaleDetails { get; set; }
+        public virtual Customer Customer { get; set; }
 
         [NotMapped]
         public double LoyalityPoint { get; set; }

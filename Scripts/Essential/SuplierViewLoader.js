@@ -16,7 +16,7 @@ function getAllSuplier() {
                 var sl = 1;
                 $.each(data, function (k, v) {
 
-                    tableRowEffect(sl, v.Name, v.ContactNo, v.Email, v.Address, v.Code, v.Photo);
+                    tableRowEffect(sl, v.Name, v.ContactNo, v.Email, v.Address, v.Code, v.PhotoStr);
                     sl++;
                 });
             }
@@ -47,9 +47,7 @@ function tableRowEffect(serial, suplierName, suplierContact, suplierEmail, supli
                         <span class="glyphicon glyphicon-pencil"></span>
 
                       </button >
-                      <button type="button" class="btn btn-info" id="Update">
-                        <span class="glyphicon glyphicon-refresh"></span>
-                     </button> <button type="button" class="btn btn-warning" id="Delete">
+                      <button type="button" class="btn btn-warning" id="Delete">
                          <span class="glyphicon glyphicon-trash"></span>
                      </button></td>`;
     var createNewRow = "<tr> " + serialCell + suplierNameCell + suplierContactCell + suplierEmailCell + suplierAddressCell + suplierCodeCell + suplierImageCell + options + " </tr>";

@@ -17,13 +17,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>*@
-            <a class="navbar-brand" href="#">Business Managment System</a>
+            <a class="navbar-brand"  style="background: whitesmoke" href="@Url.Action("Index","Home")">Business Managment System</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right col-md-9">
+            <ul class="nav navbar-nav navbar-right col-md-offset-6 col-md-8">
 
                 <!--Catagory-->
-                <li class="dropdown">
+                <li class="dropdown" style="background: whitesmoke">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Catagory <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Setup", "Setup", "Catagory")</li>
@@ -34,7 +34,7 @@
 
 
                 <!--Product-->
-                <li class="dropdown">
+                <li class="dropdown" style="background-color:whitesmoke">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Products <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Setup", "Setup", "Product")</li>
@@ -43,7 +43,7 @@
                 </li>
 
                 <!--Sale-->
-                <li class="dropdown">
+                <li class="dropdown"  style="background-color:whitesmoke">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Sale <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Product Sale", "ProductSale", "Sale")</li>
@@ -52,7 +52,7 @@
                 </li>
 
                 <!--Stock-->
-                <li class="dropdown">
+                <li class="dropdown"  style="background-color:whitesmoke">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Stock <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Create New </a></li>
@@ -62,7 +62,7 @@
                 </li>
 
                 <!--Suplier-->
-                <li class="dropdown">
+                <li class="dropdown"  style="background-color:whitesmoke">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Suplier <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Registration", "Registration", "Buyers")</li>
@@ -72,7 +72,7 @@
                 </li>
 
                 <!--Customer-->
-                <li class="dropdown">
+                <li class="dropdown"  style="background-color:whitesmoke">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Customer <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Registration", "Registration", "Customer")</li>
@@ -92,15 +92,6 @@
 </nav>
 
 
-
-
-
-
-
-
-
-
-
 <div class="container body-content">
     @RenderBody()
 
@@ -108,6 +99,7 @@
     @Scripts.Render("~/bundles/bootstrap")
 </div>
 
+  
 
 @RenderSection("scripts", required: false)
 </body>

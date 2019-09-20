@@ -96,7 +96,7 @@ namespace BMS.Controllers
         public JsonResult GetAllSuplier()
         {
             var datalist = _db.Supliers.ToList();
-            var jsondata= datalist.Select(c=> new {c.Name,c.ContactNo,c.Email,c.Code,c.ContactPerson,PhotoStr=ConvertByteToBase64String(c.Photo)});
+            var jsondata= datalist.Select(c=> new {c.Name,c.Address,c.ContactNo,c.Email,c.Code,c.ContactPerson,PhotoStr=ConvertByteToBase64String(c.Photo)});
             return Json(jsondata, JsonRequestBehavior.AllowGet);
 
         }

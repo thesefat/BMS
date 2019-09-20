@@ -321,10 +321,11 @@ D:\New folder\BusinessManagmentSystem-master\BMS\bin\System.Web.WebPages.Razor.x
 D:\New folder\BusinessManagmentSystem-master\BMS\bin\Newtonsoft.Json.xml
 D:\New folder\BusinessManagmentSystem-master\BMS\bin\Antlr3.Runtime.pdb
 D:\New folder\BusinessManagmentSystem-master\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csprojAssemblyReference.cache
 D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csproj.CoreCompileInputs.cache
 D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csproj.CopyComplete
 D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.dll
 D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.pdb
 D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.Migrations.InitialMigration.resources
 D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csproj.GenerateResource.cache
+D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csprojAssemblyReference.cache
+D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.Migrations.DateExcluded.resources

@@ -73,10 +73,41 @@ namespace BMS.Migrations
                         PreviousMRP = c.Double(nullable: false),
                         NewCostPrice = c.Double(nullable: false),
                         NewMRP = c.Double(nullable: false),
+                        Purchase_Id = c.Long(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
-                .Index(t => t.ProductId);
+                .ForeignKey("dbo.Purchases", t => t.Purchase_Id)
+                .Index(t => t.ProductId)
+                .Index(t => t.Purchase_Id);
+            
+            CreateTable(
+                "dbo.Purchases",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        PurchaseDate = c.DateTime(nullable: false),
+                        SuplierId = c.Long(nullable: false),
+                        ProductId = c.Long(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Supliers", t => t.SuplierId, cascadeDelete: true)
+                .Index(t => t.SuplierId);
+            
+            CreateTable(
+                "dbo.Supliers",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        Name = c.String(),
+                        ContactNo = c.String(),
+                        Email = c.String(),
+                        Address = c.String(),
+                        Code = c.String(),
+                        ContactPerson = c.String(),
+                        Photo = c.Binary(),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Sales",
@@ -86,7 +117,9 @@ namespace BMS.Migrations
                         PurchaseDate = c.DateTime(nullable: false),
                         CustomerId = c.Long(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Customers", t => t.CustomerId, cascadeDelete: true)
+                .Index(t => t.CustomerId);
             
             CreateTable(
                 "dbo.SaleDetails",
@@ -111,28 +144,11 @@ namespace BMS.Migrations
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
-                        CatagoryName = c.String(),
-                        ProductName = c.String(),
-                        ProductId = c.Long(nullable: false),
-                        StartTime = c.DateTime(nullable: false),
-                        EndDate = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
-                .Index(t => t.ProductId);
-            
-            CreateTable(
-                "dbo.Supliers",
-                c => new
-                    {
-                        Id = c.Long(nullable: false, identity: true),
-                        Name = c.String(),
-                        ContactNo = c.String(),
-                        Email = c.String(),
-                        Address = c.String(),
-                        Code = c.String(),
-                        ContactPerson = c.String(),
-                        Photo = c.Binary(),
+                        ProductName = c.Long(nullable: false),
+                        ExpiredDate = c.DateTime(nullable: false),
+                        OpeningBalance = c.Double(nullable: false),
+                        InStock = c.Double(nullable: false),
+                        OutStock = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -140,20 +156,25 @@ namespace BMS.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Stocks", "ProductId", "dbo.Products");
             DropForeignKey("dbo.SaleDetails", "Sale_Id", "dbo.Sales");
             DropForeignKey("dbo.SaleDetails", "ProductId", "dbo.Products");
+            DropForeignKey("dbo.Sales", "CustomerId", "dbo.Customers");
+            DropForeignKey("dbo.Purchases", "SuplierId", "dbo.Supliers");
+            DropForeignKey("dbo.PurchaseDetails", "Purchase_Id", "dbo.Purchases");
             DropForeignKey("dbo.PurchaseDetails", "ProductId", "dbo.Products");
             DropForeignKey("dbo.Products", "CatagoryId", "dbo.Catagories");
-            DropIndex("dbo.Stocks", new[] { "ProductId" });
             DropIndex("dbo.SaleDetails", new[] { "Sale_Id" });
             DropIndex("dbo.SaleDetails", new[] { "ProductId" });
+            DropIndex("dbo.Sales", new[] { "CustomerId" });
+            DropIndex("dbo.Purchases", new[] { "SuplierId" });
+            DropIndex("dbo.PurchaseDetails", new[] { "Purchase_Id" });
             DropIndex("dbo.PurchaseDetails", new[] { "ProductId" });
             DropIndex("dbo.Products", new[] { "CatagoryId" });
-            DropTable("dbo.Supliers");
             DropTable("dbo.Stocks");
             DropTable("dbo.SaleDetails");
             DropTable("dbo.Sales");
+            DropTable("dbo.Supliers");
+            DropTable("dbo.Purchases");
             DropTable("dbo.PurchaseDetails");
             DropTable("dbo.Customers");
             DropTable("dbo.Products");

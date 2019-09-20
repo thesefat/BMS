@@ -53,8 +53,10 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -136,9 +138,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909161045194_InitialMigration.cs" />
-    <Compile Include="Migrations\201909161045194_InitialMigration.Designer.cs">
-      <DependentUpon>201909161045194_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201909181000162_InitialMigration.cs" />
+    <Compile Include="Migrations\201909181000162_InitialMigration.Designer.cs">
+      <DependentUpon>201909181000162_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909191405125_DateExcluded.cs" />
+    <Compile Include="Migrations\201909191405125_DateExcluded.Designer.cs">
+      <DependentUpon>201909191405125_DateExcluded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModels\Buyer.cs" />
@@ -218,7 +224,7 @@
     <Content Include="Views\Customer\Registration.cshtml" />
     <Content Include="Views\Buyers\Registration.cshtml" />
     <Content Include="Views\Sale\ProductSale.cshtml" />
-    <Content Include="Views\Purchase\PurchaseItems.cshtml" />
+    <Content Include="Views\Purchase\Create.cshtml" />
     <Content Include="Views\Buyers\SuplierList.cshtml" />
     <Content Include="Views\Customer\CustomerList.cshtml" />
   </ItemGroup>
@@ -240,8 +246,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909161045194_InitialMigration.resx">
-      <DependentUpon>201909161045194_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909181000162_InitialMigration.resx">
+      <DependentUpon>201909181000162_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909191405125_DateExcluded.resx">
+      <DependentUpon>201909191405125_DateExcluded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
