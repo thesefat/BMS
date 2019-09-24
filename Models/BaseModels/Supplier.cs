@@ -6,7 +6,7 @@ using System.Web;
 
 namespace BMS.Models.BaseModels
 {
-    public class Suplier
+    public class Supplier
     {
         public long Id { get; set; }
         public string Name { get; set; }

@@ -8,205 +8,136 @@
 
     <hr />
     <div class="panel-body">
-        <div class="row">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="panel-title"> Supplier</div>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            @*<div class="form-group">
-                                    @Html.LabelFor(model => model.PurchaseDate, "Date", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8" >
-                                        @Html.TextBoxFor(m => m.PurchaseDate,htmlAttributes: new { @class="form-control", type="dateTime"})
-                                    </div>
-                                </div>*@
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.LabelFor(c => c.SuplierId, "Suplier *", htmlAttributes: new { @class = "control-label col-md-4" })
-                                <div class="col-md-8">
 
-                                    @Html.DropDownListFor(c => c.SuplierId, Model.SuplierLookUp, htmlAttributes: new { @class = "form-control" })
-                                </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title"> Supplier</div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PurchaseDate, "Date", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m => m.PurchaseDate, null, new { @class = "form-control", @type = "date" })
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                @Html.Label("InvoiceNo", "Invoice No", htmlAttributes: new { @class = "control-label col-md-4" })
-                                <div class="col-md-8">
-                                    @Html.TextBox("InvoiceNo", null, htmlAttributes: new { @class = "form-control" })
-                                </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.SupplierId, "Supplier *", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+
+                                @Html.DropDownListFor(c => c.SupplierId, Model.SupplierLookUp, htmlAttributes: new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.Label("InvoiceNo", "Invoice No", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.TextBox("InvoiceNo", null, htmlAttributes: new { @class = "form-control" })
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
-       
 
-            <!--Details info start-->
-            @*<div class="col-md-6">*@
-            <div class="panel-group">
-                <div class="panel panel-primary">
-                    <div class="panel-heading ">
-                        <div class="panel-title" align="center">Purchase Product</div>
+
+
+
+
+        <!--Details info start-->
+        @*<div class="col-md-6">*@
+
+        <div class="panel panel-primary">
+            <div class="panel-heading ">
+                <div class="panel-title" align="center">Purchase Product</div>
+            </div>
+            <div class="panel-body">
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.Label("ProductId", "Product *", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.DropDownListFor(c => c.ProductId, Model.ProductLookUp, htmlAttributes: new { @class = "form-control" })
+                            </div>
+                        </div>
                     </div>
-                    <div class="panel-body">
-
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.Label("ProductId", "Product *", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.DropDownListFor(c => c.ProductId, Model.ProductLookUp, htmlAttributes: new { @class = "form-control" })
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.Label("Code", "Code", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.TextBox("Code", null, htmlAttributes: new { @class = "form-control" })
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                @*<div class="form-group">
-                                        @Html.Label("ManufactureDate", "Manufacture Date", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-8">
-                                            @Html.TextBox("ManufactureDate","Manufacture Date",htmlAttributes: new { @class="form-control", type="dateTime"})
-
-                                        </div>
-                                    </div>*@
-                            </div>
-
-                        </div>
-                        <br />
-                        <div class="row">
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.Label("PurchaseQuantity", "Qty *", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.TextBox("PurchaseQuantity", null, new { @class = "form-control" })
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.Label("UnitPrice", "Unit Price *", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-
-                                        @Html.TextBox("UnitPrice", null, htmlAttributes: new { @class = "form-control" })
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                @*<div class="form-group">
-                                        @Html.Label("ExpireDate", "Expire Date", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-8">
-                                            @Html.TextBox("ExpireDate","Expire Date",htmlAttributes: new { @class="form-control", type="dateTime"})
-
-                                        </div>
-                                    </div>*@
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.Label("Code", "Code", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.TextBox("Code", null, htmlAttributes: new { @class = "form-control" })
                             </div>
                         </div>
-                        @*<br />
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        @Html.Label("TotalPrice", "Unit Price *", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-8">
+                    </div>
+                    <div class="col-md-4">
+                        @*<div class="form-group">
+                    @Html.Label("ManufactureDate", "Manufacture Date", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.TextBox("ManufactureDate","Manufacture Date",htmlAttributes: new { @class="form-control", type="dateTime"})
 
-                                            @Html.TextBox("TotalPrice", null, htmlAttributes: new { @class = "form-control" })
-                                        </div>
-                                    </div>
-                                </div>
+                    </div>
+                </div>*@
+                    </div>
+
+                </div>
+                <br />
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.Label("Qty", "Qty *", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.TextBox("Qty", null, new { @class = "form-control" })
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        @Html.Label("TotalPrice", "Unit Price *", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-8">
-                                            @Html.TextBox("TotalPrice", null, htmlAttributes: new { @class = "form-control" })
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>*@
-
-                            @*<div class="col-md-4">
-                                    <div class="form-group">
-                                        @Html.Label("PreviousMRP", "Previous MRP", htmlAttributes: new { @class = "control-label col-md-4" })
-                                        <div class="col-md-8">
-
-                                            @Html.TextBox("PreviousMRP", null, htmlAttributes: new { @class = "form-control" })
-                                        </div>
-                                    </div>
-                                </div>*@
-
                         </div>
-                        <br />
-                        @*<div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(c => c.PreviousMRP, "Previous MRP", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
+                    </div>
 
-                                        @Html.TextBoxFor(c => c.PreviousMRP, htmlAttributes: new { @class = "form-control" })
-                                    </div>
-                                </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.Label("UnitPrice", "Unit Price *", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+
+                                @Html.TextBox("UnitPrice", null, htmlAttributes: new { @class = "form-control" })
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(c => c.NewCostPrice, "New Cost Price", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        @*<div class="form-group">
+                    @Html.Label("ExpireDate", "Expire Date", htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.TextBox("ExpireDate","Expire Date",htmlAttributes: new { @class="form-control", type="dateTime"})
 
-                                        @Html.TextBoxFor(c => c.NewCostPrice, htmlAttributes: new { @class = "form-control" })
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>*@
+                    </div>
+                </div>
 
 
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    @Html.LabelFor(c => c.NewMRP, "New MRP", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
+                <hr />
 
-                                        @Html.TextBoxFor(c => c.NewMRP, htmlAttributes: new { @class = "form-control" })
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>*@
-                        <hr />
-
-                        <div class="row">
-                            <div class="form-group">
-                                <div class="col-md-offset-10 col-md-2">
-                                    <input type="button" value="Add" class="btn btn-primary" />
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-offset-10 col-md-2">
+                            <input type="button" value="Add" id="AddButton" class="btn btn-primary" />
                         </div>
                     </div>
                 </div>
-        
-            
-            
-            <div class="row">
-                <h2 align="center" style="background-color:teal;color:white;font-weight:bold"> Purchase Details</h2>
 
-                <div class="col-md-12">
+                <hr />
+                <div class="form-group">
+                    <h2 align="center" style="background-color: teal; color: white; font-weight: bold"> Purchase Details</h2>
+
+                    @*<div class="col-md-12">*@
 
                     <table class="table table-bordered table-striped table-hover table-responsive ">
                         <thead>
-                            <tr align="center" style="background-color:teal;color:white;font-weight:bold">
+                            <tr align="center" style="background-color: teal; color: white; font-weight: bold">
                                 <td>Serial No</td>
                                 <td>Product Name</td>
                                 <td>Unit Price</td>
@@ -216,87 +147,177 @@
                                 <td>Option</td>
                             </tr>
                         </thead>
-                        <tbody id="ProductsDetailsTable"></tbody>
-                    </table>
-
-                </div>
-            </div>
-            
-            <hr />
-
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-md-offset-10 col-md-2">
-                        <input type="submit" value="Save" class="btn btn-success" />
-                    </div>
-                </div>
-            </div>
-            
-
-            @*</div>*@
-            <!--Details table close-->
-            <!--Side Table Start -->
-            @*<div class="col-md-6">
-                    <table class="table table-bordered table-striped table-hover table-responsive ">
-                        <thead>
-                            <tr align="center" style="background-color:teal;color:white;font-weight:bold">
-                                <td>Serial No</td>
-                                <td>Product Name</td>
-                                <td>Quantity</td>
-                                <td>Unit Price</td>
-                                <td>Total Price</td>
-
-                                <td>Option</td>
-                            </tr>
-                        </thead>
                         <tbody id="ProductsDetailsTable">
+
+                            @*@{
+                        var index=0;
+                    }
+                    @foreach (var d in Model.PurchaseDetails)
+                    {
+                        <tr id="ProductRow_@index">
+                            <td><input></td>
+                            <td><input type='hidden' id='Qty_" + index + "' name='PurchaseDetails[" + index + "].Qty' value='" + c.qty + "' />" + c.qty + "</td>
+                        </tr>
+                    }*@
 
 
                         </tbody>
                     </table>
 
-                </div>*@
-            <!--Side table Close-->
-            @*<div class="col-md-4">
-                    <div class="panel-group">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="panel-title">Suplier</div>
+                    @*</div>*@
+                </div>
 
-                            </div>
-                            <div class="panel-body">
+                <hr />
 
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.PurchaseDate, "Date", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.PurchaseDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.PurchaseDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <hr />
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.SuplierId, "Suplier *", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.SuplierId, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.SuplierId, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <hr /> <hr />
-                                <div class="form-group">
-                                    @Html.Label("InvoiceNo", "Invoice No", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.TextBox("InvoiceNo", null, htmlAttributes: new { @class = "form-control" })
-                                    </div>
-                                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-offset-10 col-md-2">
+                            <input type="submit" value="Save" class="btn btn-success" />
+                        </div>
+                    </div>
+                </div>
 
+
+
+                @*<br />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="form-group">
+                        @Html.Label("TotalPrice", "Unit Price *", htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+
+                            @Html.TextBox("TotalPrice", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div class="form-group">
+                        @Html.Label("TotalPrice", "Unit Price *", htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.TextBox("TotalPrice", null, htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+                @*<div class="col-md-4">
+            <div class="form-group">
+                @Html.Label("PreviousMRP", "Previous MRP", htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+
+                    @Html.TextBox("PreviousMRP", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+        </div>*@
+
+            </div>
+            <br />
+            @*<div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.PreviousMRP, "Previous MRP", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+
+                                @Html.TextBoxFor(c => c.PreviousMRP, htmlAttributes: new { @class = "form-control" })
                             </div>
                         </div>
-
                     </div>
-                </div>*@
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.NewCostPrice, "New Cost Price", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
 
+                                @Html.TextBoxFor(c => c.NewCostPrice, htmlAttributes: new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            @Html.LabelFor(c => c.NewMRP, "New MRP", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+
+                                @Html.TextBoxFor(c => c.NewMRP, htmlAttributes: new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>
+
+                </div>*@
+            
 
         </div>
+
+       
+
+
+        @*</div>*@
+        <!--Details table close-->
+        <!--Side Table Start -->
+        @*<div class="col-md-6">
+                <table class="table table-bordered table-striped table-hover table-responsive ">
+                    <thead>
+                        <tr align="center" style="background-color:teal;color:white;font-weight:bold">
+                            <td>Serial No</td>
+                            <td>Product Name</td>
+                            <td>Quantity</td>
+                            <td>Unit Price</td>
+                            <td>Total Price</td>
+
+                            <td>Option</td>
+                        </tr>
+                    </thead>
+                    <tbody id="ProductsDetailsTable">
+
+
+                    </tbody>
+                </table>
+
+            </div>*@
+        <!--Side table Close-->
+        @*<div class="col-md-4">
+                <div class="panel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="panel-title">Supplier</div>
+
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PurchaseDate, "Date", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.PurchaseDate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PurchaseDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.SupplierId, "Supplier *", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.SupplierId, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.SupplierId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <hr /> <hr />
+                            <div class="form-group">
+                                @Html.Label("InvoiceNo", "Invoice No", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.TextBox("InvoiceNo", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>*@
+
+
+    </div>
 
 
 }
@@ -310,5 +331,10 @@
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery-3.3.1.js"></script>
+
+
+    <script src="~/Scripts/Models/PurchaseDetail.js"></script>
+    <script src="~/Scripts/Essential/Purchase/PurchaseCreate.js"></script>
+
+
 }

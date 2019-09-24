@@ -18,12 +18,12 @@ namespace BMS.Controllers
             return View();
         }
 
-        #region Registration of Suplier
+        #region Registration of Supplier
 
         [HttpGet]
         public ActionResult Registration()
         {
-            var model = new Suplier()
+            var model = new Supplier()
             {
                 Name = "",
                 Code = "",
@@ -39,7 +39,7 @@ namespace BMS.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Registration(Suplier model)
+        public ActionResult Registration(Supplier model)
         {
             ViewBag.Message = "";
            
@@ -74,7 +74,7 @@ namespace BMS.Controllers
                     #endregion
 
 
-                    ViewBag.Message = "Suplier Sccessfully Added !";
+                    ViewBag.Message = "Supplier Sccessfully Added !";
                 }
 
             }
@@ -85,7 +85,7 @@ namespace BMS.Controllers
 
         #endregion
 
-        #region Suplier View
+        #region Supplier View
         public ActionResult SuplierList()
         {
             return View();

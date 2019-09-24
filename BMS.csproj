@@ -146,6 +146,10 @@
     <Compile Include="Migrations\201909191405125_DateExcluded.Designer.cs">
       <DependentUpon>201909191405125_DateExcluded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909231329486_PurchaseModelUpdated.cs" />
+    <Compile Include="Migrations\201909231329486_PurchaseModelUpdated.Designer.cs">
+      <DependentUpon>201909231329486_PurchaseModelUpdated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModels\Buyer.cs" />
     <Compile Include="Models\BaseModels\BuyerType.cs" />
@@ -157,7 +161,7 @@
     <Compile Include="Models\BaseModels\Sale.cs" />
     <Compile Include="Models\BaseModels\SaleDetails.cs" />
     <Compile Include="Models\BaseModels\Stock.cs" />
-    <Compile Include="Models\BaseModels\Suplier.cs" />
+    <Compile Include="Models\BaseModels\Supplier.cs" />
     <Compile Include="Models\Enums\BuyersEnum.cs" />
     <Compile Include="Models\ViewModels\CatagoryVm.cs" />
     <Compile Include="Models\ViewModels\CustomerVm.cs" />
@@ -175,6 +179,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Scripts\Essential\CustomerViewLoader.js" />
+    <Content Include="Scripts\Essential\Purchase\PurchaseCreate.js" />
+    <Content Include="Scripts\Models\PurchaseDetail.js" />
     <Content Include="Views\df.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909191405125_DateExcluded.resx">
       <DependentUpon>201909191405125_DateExcluded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909231329486_PurchaseModelUpdated.resx">
+      <DependentUpon>201909231329486_PurchaseModelUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -329,3 +329,4 @@ D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.Migrations.Initia
 D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csproj.GenerateResource.cache
 D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.csprojAssemblyReference.cache
 D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.Migrations.DateExcluded.resources
+D:\New folder\BusinessManagmentSystem-master\BMS\obj\Debug\BMS.Migrations.PurchaseModelUpdated.resources

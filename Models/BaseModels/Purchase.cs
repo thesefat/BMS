@@ -17,7 +17,7 @@ namespace BMS.Models.BaseModels
         public long SupplierId { get; set; }
         public long ProductId { get; set; }
         public virtual ICollection<PurchaseDetails> PurchaseDetails { get; set; }
-        public virtual Suplier Supplier { get; set; }
+        public virtual Supplier Supplier { get; set; }
         public IEnumerable<SelectListItem> SupplierLookUp { get; set; }
         public IEnumerable<SelectListItem> ProductLookUp { get; set; }
 
