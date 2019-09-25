@@ -24,17 +24,37 @@ $(document.body).on("click", "#AddButton", function () {
 function addPurchaseDetail() {
 
     const model = getSelectedData();
+
     if (model !== false && model !== undefined) {
 
+        if (duplicateCheck(model.productId)) {
+            return alert("Already added into cart you can - Edit - now !");
+        } else {
+            purchaseDetailList.push(model);
+            createNewRowForPurchase();
+        }
 
-        purchaseDetailList.push(model);
-        createNewRowForPurchase();
+        
     }
+
+
 }
 
 
 let purchaseDetailList = [];
 
+
+function duplicateCheck(id) {
+
+    const found = purchaseDetailList.find(c => c.productId == id);
+    if (found !== undefined) {
+        return true;
+    }
+
+    return false;
+
+
+}
 
 function createNewRowForPurchase() {
 
@@ -86,7 +106,7 @@ function editRow(productId) {
             $("#Qty").val(model.qty);
             $("#UnitPrice").val(model.unitPrice);
 
-            createNewRowForPurchase();
+            //createNewRowForPurchase();
         }
 
 

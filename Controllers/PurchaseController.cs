@@ -37,27 +37,6 @@ namespace BMS.Controllers
         public ActionResult Create(Purchase purchase)
         {
 
-            //var stockModel = new Stock()
-            //{
-            //    ProductName = purchaseDetails.ProductId,
-            //    //ExpiredDate = purchaseDetails.ExpireDate,
-            //    OpeningBalance = 0.0,
-            //    InStock = purchaseDetails.PurchaseQuantity,
-            //    OutStock = 0.0
-            //};
-
-
-            //var purchaseModel = new Purchase()
-            //{
-            //    //PurchaseDate = purchase.PurchaseDate,
-            //    SupplierId = purchase.SupplierId,
-            //    ProductId = purchase.ProductId
-
-            //};
-
-
-
-
             if (ModelState.IsValid)
             {
                 //_db.PurchaseDetails.Add(purchaseDetails);
