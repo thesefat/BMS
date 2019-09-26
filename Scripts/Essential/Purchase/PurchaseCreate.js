@@ -7,16 +7,25 @@
 // Add to purchaseDetailList
 // Call createNewRowForPurchase()
 
+$(document.body).on("click", "#submitButton", function () {
 
+    
+    var value = $("#InvoiceNo").val();
+
+    if (value == "") {
+        $("#invoiceAlert").css('color', 'red').text("Required").fadeOut(3000);
+        $("#InvoiceNo").focus();
+        return false;
+    }
+    return true;
+});
 
 
 
 
 $(document.body).on("click", "#AddButton", function () {
-    addPurchaseDetail();
 
-    //var name = $(this).attr("data-name");
-    //var name2 = $(this).data("name");
+    addPurchaseDetail();
 
 });
 
@@ -130,7 +139,8 @@ function getSelectedData() {
     model.unitPrice = $("#UnitPrice").val();
 
     if (!(model.productId > 0) || model.qty == "" || !(model.unitPrice > 0)) {
-        alert("Please Check Details");
+        //alert("Please Check Details");
+        $("#detailsWarning").text("Please check details entry !").css("color", 'blue');
         return false;
     }
 
@@ -144,3 +154,9 @@ function clearDetailForm() {
     $("#UnitPrice").val(0);
 
 }
+
+
+
+
+
+

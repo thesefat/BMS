@@ -37,6 +37,7 @@
                             @Html.Label("InvoiceNo", "Invoice No", htmlAttributes: new { @class = "control-label col-md-4" })
                             <div class="col-md-8">
                                 @Html.TextBox("InvoiceNo", null, htmlAttributes: new { @class = "form-control" })
+                                <label id="invoiceAlert"></label>
                             </div>
                         </div>
                     </div>
@@ -77,12 +78,12 @@
                     </div>
                     <div class="col-md-4">
                         @*<div class="form-group">
-                    @Html.Label("ManufactureDate", "Manufacture Date", htmlAttributes: new { @class = "control-label col-md-4" })
-                    <div class="col-md-8">
-                        @Html.TextBox("ManufactureDate","Manufacture Date",htmlAttributes: new { @class="form-control", type="dateTime"})
+                                @Html.Label("ManufactureDate", "Manufacture Date", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.TextBox("ManufactureDate","Manufacture Date",htmlAttributes: new { @class="form-control", type="dateTime"})
 
-                    </div>
-                </div>*@
+                                </div>
+                            </div>*@
                     </div>
 
                 </div>
@@ -94,6 +95,7 @@
                             @Html.Label("Qty", "Qty *", htmlAttributes: new { @class = "control-label col-md-4" })
                             <div class="col-md-8">
                                 @Html.TextBox("Qty", null, new { @class = "form-control" })
+                                <label id="qtyValidation"></label>
                             </div>
                         </div>
                     </div>
@@ -109,18 +111,20 @@
                     </div>
                     <div class="col-md-4">
                         @*<div class="form-group">
-                    @Html.Label("ExpireDate", "Expire Date", htmlAttributes: new { @class = "control-label col-md-4" })
-                    <div class="col-md-8">
-                        @Html.TextBox("ExpireDate","Expire Date",htmlAttributes: new { @class="form-control", type="dateTime"})
+                                @Html.Label("ExpireDate", "Expire Date", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.TextBox("ExpireDate","Expire Date",htmlAttributes: new { @class="form-control", type="dateTime"})
 
-                    </div>
-                </div>*@
+                                </div>
+                            </div>*@
                     </div>
                 </div>
 
 
                 <hr />
-
+                <div class="col-md-6">
+                    <label id="detailsWarning" ></label>
+                </div>
                 <div class="row">
                     <div class="form-group">
                         <div class="col-md-offset-10 col-md-2">
@@ -150,15 +154,15 @@
                         <tbody id="ProductsDetailsTable">
 
                             @*@{
-                        var index=0;
-                    }
-                    @foreach (var d in Model.PurchaseDetails)
-                    {
-                        <tr id="ProductRow_@index">
-                            <td><input></td>
-                            <td><input type='hidden' id='Qty_" + index + "' name='PurchaseDetails[" + index + "].Qty' value='" + c.qty + "' />" + c.qty + "</td>
-                        </tr>
-                    }*@
+                                    var index=0;
+                                }
+                                @foreach (var d in Model.PurchaseDetails)
+                                {
+                                    <tr id="ProductRow_@index">
+                                        <td><input></td>
+                                        <td><input type='hidden' id='Qty_" + index + "' name='PurchaseDetails[" + index + "].Qty' value='" + c.qty + "' />" + c.qty + "</td>
+                                    </tr>
+                                }*@
 
 
                         </tbody>
@@ -172,7 +176,7 @@
                 <div class="row">
                     <div class="form-group">
                         <div class="col-md-offset-10 col-md-2">
-                            <input type="submit" value="Save" class="btn btn-success" />
+                            <input type="submit" id="submitButton" value="Save" class="btn btn-success" />
                         </div>
                     </div>
                 </div>
@@ -180,38 +184,38 @@
 
 
                 @*<br />
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <div class="form-group">
-                        @Html.Label("TotalPrice", "Unit Price *", htmlAttributes: new { @class = "control-label col-md-4" })
-                        <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    @Html.Label("TotalPrice", "Unit Price *", htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
 
-                            @Html.TextBox("TotalPrice", null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.TextBox("TotalPrice", null, htmlAttributes: new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <div class="form-group">
-                        @Html.Label("TotalPrice", "Unit Price *", htmlAttributes: new { @class = "control-label col-md-4" })
-                        <div class="col-md-8">
-                            @Html.TextBox("TotalPrice", null, htmlAttributes: new { @class = "form-control" })
-                        </div>
-                    </div>
-                </div>
-            </div>*@
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    @Html.Label("TotalPrice", "Unit Price *", htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        @Html.TextBox("TotalPrice", null, htmlAttributes: new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
 
                 @*<div class="col-md-4">
-            <div class="form-group">
-                @Html.Label("PreviousMRP", "Previous MRP", htmlAttributes: new { @class = "control-label col-md-4" })
-                <div class="col-md-8">
+                        <div class="form-group">
+                            @Html.Label("PreviousMRP", "Previous MRP", htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
 
-                    @Html.TextBox("PreviousMRP", null, htmlAttributes: new { @class = "form-control" })
-                </div>
-            </div>
-        </div>*@
+                                @Html.TextBox("PreviousMRP", null, htmlAttributes: new { @class = "form-control" })
+                            </div>
+                        </div>
+                    </div>*@
 
             </div>
             <br />
@@ -247,11 +251,11 @@
                     </div>
 
                 </div>*@
-            
+
 
         </div>
 
-       
+
 
 
         @*</div>*@
@@ -335,6 +339,7 @@
 
     <script src="~/Scripts/Models/PurchaseDetail.js"></script>
     <script src="~/Scripts/Essential/Purchase/PurchaseCreate.js"></script>
+    <script src="~/Scripts/Essential/Purchase/TextBoxValidation.js"></script>
 
 
 }

@@ -180,6 +180,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Scripts\Essential\CustomerViewLoader.js" />
     <Content Include="Scripts\Essential\Purchase\PurchaseCreate.js" />
+    <Content Include="Scripts\Essential\Purchase\TextBoxValidation.js" />
     <Content Include="Scripts\Models\PurchaseDetail.js" />
     <Content Include="Views\df.jpg" />
     <Content Include="favicon.ico" />
@@ -192,7 +193,6 @@
     <Content Include="Scripts\Essential\CatagoryScript.js" />
     <Content Include="Scripts\Essential\CatagoryViewLoader.js" />
     <Content Include="Scripts\Essential\CustomerValidation.js" />
-    <Content Include="Scripts\Essential\OptionsLoader.js" />
     <Content Include="Scripts\Essential\ProductScript.js" />
     <Content Include="Scripts\Essential\ProductViewLoader.js" />
     <Content Include="Scripts\Essential\PurchaseProductLookUp.js" />
@@ -236,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\Essential\Catagory\" />
     <Folder Include="Views\Supliers\" />
   </ItemGroup>
   <ItemGroup>

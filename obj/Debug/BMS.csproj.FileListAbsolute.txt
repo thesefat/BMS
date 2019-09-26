@@ -405,7 +405,6 @@ H:\BMS\BMS\bin\System.Web.WebPages.Razor.xml
 H:\BMS\BMS\bin\Newtonsoft.Json.xml
 H:\BMS\BMS\bin\Antlr3.Runtime.pdb
 H:\BMS\BMS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-H:\BMS\BMS\obj\Debug\BMS.csprojAssemblyReference.cache
 H:\BMS\BMS\obj\Debug\BMS.Migrations.InitialMigration.resources
 H:\BMS\BMS\obj\Debug\BMS.Migrations.DateExcluded.resources
 H:\BMS\BMS\obj\Debug\BMS.Migrations.PurchaseModelUpdated.resources

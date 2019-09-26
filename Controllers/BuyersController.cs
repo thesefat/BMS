@@ -96,7 +96,7 @@ namespace BMS.Controllers
         public JsonResult GetAllSuplier()
         {
             var datalist = _db.Supliers.ToList();
-            var jsondata= datalist.Select(c=> new {c.Name,c.Address,c.ContactNo,c.Email,c.Code,c.ContactPerson,PhotoStr=ConvertByteToBase64String(c.Photo)});
+            var jsondata = datalist.Select(c => new { c.Id,c.Name, c.Address, c.ContactNo, c.Email, c.Code, c.ContactPerson, PhotoStr = ConvertByteToBase64String(c.Photo) });
             return Json(jsondata, JsonRequestBehavior.AllowGet);
 
         }
@@ -201,10 +201,22 @@ namespace BMS.Controllers
             return Json(isFound, JsonRequestBehavior.AllowGet);
         }
         
-        public JsonResult GetSupliers()
+
+        public JsonResult Delete(int id)
         {
-            var datalist = _db.Supliers.ToList();
-            return Json(datalist, JsonRequestBehavior.AllowGet);
+            try
+            {
+                Supplier data = _db.Supliers.Where(c => c.Id == id).FirstOrDefault();
+                _db.Supliers.Remove(data);
+                _db.SaveChanges();
+                var datalist = _db.Supliers.ToList();
+                var jsondata = datalist.Select(c => new { c.Id,c.Name, c.Address, c.ContactNo, c.Email, c.Code, c.ContactPerson, PhotoStr = ConvertByteToBase64String(c.Photo) });
+                return Json(jsondata, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }

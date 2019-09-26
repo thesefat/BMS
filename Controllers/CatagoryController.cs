@@ -2,6 +2,7 @@
 using BMS.Models.BaseModels;
 using BMS.Models.ViewModels;
 using BMS.Repository;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -148,6 +149,21 @@ namespace BMS.Controllers
             return Json(jsonData,JsonRequestBehavior.AllowGet);
         }
 
-
+        public JsonResult Delete(int id)
+        {
+            try
+            {
+                Catagory data = _db.Catagories.Where(c => c.Id == id).FirstOrDefault();
+                _db.Catagories.Remove(data);
+                _db.SaveChanges();
+                var datalist = _db.Catagories.ToList();
+                var jsonData = datalist.Select(c => new { c.Id, c.Code, c.Name });
+                return Json(jsonData, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

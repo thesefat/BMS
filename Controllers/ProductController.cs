@@ -183,7 +183,7 @@ namespace BMS.Controllers
 
           
             var datalist = _db.Products.ToList();
-            var jsoData = datalist.Select(c => new { c.Id, c.Name,c.UnitPrice, c.CostPrice, c.Description, c.ReorderLevel, PhotoStr = ConvertByteToBase64String(c.Photo) });
+            var jsoData = datalist.Select(c => new { c.Id, c.Name, c.UnitPrice, c.CostPrice, c.Description, c.ReorderLevel, PhotoStr = ConvertByteToBase64String(c.Photo) });
             return Json(jsoData, JsonRequestBehavior.AllowGet);
 
            
@@ -199,6 +199,25 @@ namespace BMS.Controllers
                 return result;
             }
             return null;
+        }
+
+
+
+        public JsonResult Delete(int id)
+        {
+            try
+            {
+                Product data = _db.Products.Where(c => c.Id == id).FirstOrDefault();
+                _db.Products.Remove(data);
+                _db.SaveChanges();
+                var datalist = _db.Products.ToList();
+                var jsonData = datalist.Select(c => new { c.Id, c.Name, c.UnitPrice, c.CostPrice, c.Description, c.ReorderLevel, PhotoStr = ConvertByteToBase64String(c.Photo) });
+                return Json(jsonData, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

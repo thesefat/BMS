@@ -128,9 +128,6 @@ namespace BMS.Controllers
             return isAddOrUpdated;
         }
 
-
-
-
         public List<SelectListItem> ProductListLookUp()
         {
             var dataList = _db.Products.ToList();
@@ -166,8 +163,6 @@ namespace BMS.Controllers
         }
 
         #endregion
-
-
         public List<SelectListItem> GetDefaultSelectedList()
         {
             var selectList = new List<SelectListItem>
@@ -190,7 +185,10 @@ namespace BMS.Controllers
 
 
 
-
+        public ActionResult View()
+        {
+            return View();
+        }
 
 
 

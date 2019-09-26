@@ -16,7 +16,7 @@ function getProducts() {
                 var sl = 1;
                 $.each(data, function (k, v) {
 
-                    tableRowEffect(sl, v.Name, v.UnitPrice, v.CostPrice, v.ReorderLevel, v.PhotoStr, v.Description);
+                    tableRowEffect(sl, v.Name, v.UnitPrice, v.CostPrice, v.ReorderLevel, v.PhotoStr, v.Description,v.Id);
                     sl++;
                 });
             }
@@ -29,7 +29,7 @@ function getProducts() {
 
 
 
-function tableRowEffect(serial, productName,productUnitPrice,productCostPrice,productReorderLevel,productImage,productDescription) {
+function tableRowEffect(serial, productName,productUnitPrice,productCostPrice,productReorderLevel,productImage,productDescription,id) {
 
    
 
@@ -47,15 +47,7 @@ function tableRowEffect(serial, productName,productUnitPrice,productCostPrice,pr
 
     var productsDiscriptionCell = "<td>" + productDescription + "</td>";
 
-    var options = `<td align="center"><button type="button" class="btn btn-success" id="Edit">
-                        <span class="glyphicon glyphicon-pencil"></span>
-
-                      </button >
-                      <button type="button" class="btn btn-info" id="Update">
-                        <span class="glyphicon glyphicon-refresh"></span>
-                     </button> <button type="button" class="btn btn-warning" id="Delete">
-                         <span class="glyphicon glyphicon-trash"></span>
-                     </button></td>`;
+    var options = "<td align='center'><button type='button' class='btn btn-success' id='Edit' onClick='editRow(" + id + ")'> <span class='glyphicon glyphicon-pencil'></span></button>    <button type='button' class='btn btn-warning' id='Delete' onClick='deleteRow(" + id + ")'><span class='glyphicon glyphicon-trash'></span></button></td>";
 
 
     var createNewRow = "<tr> " + serialCell + productsNameCell + productUnitPriceCell + productCostPriceCell + productsReorderCell + productsImageCell + productsDiscriptionCell + options + " </tr>";
@@ -64,3 +56,39 @@ function tableRowEffect(serial, productName,productUnitPrice,productCostPrice,pr
 
 
 }
+
+
+
+
+function deleteRow(id) {
+    deleteFromServer(id);
+    $("#ProductsDetailsTable").empty();
+
+
+
+}
+
+
+
+
+function deleteFromServer(id) {
+
+    var serial = 0;
+    if (confirm('Are You Sure to Delete?') === true) {
+
+        var params = { id: id };
+        var url = "../../Product/Delete";
+        $.post(url, params, function (data) {
+            data.forEach(c => {
+                tableRowEffect(++serial, c.Name, c.UnitPrice, c.CostPrice, c.ReorderLecel, c.PhotoStr, c.Description, c.Id);
+
+            });
+
+
+
+        }).fail(function (err) {
+            alert(err);
+        });
+    }
+}
+
