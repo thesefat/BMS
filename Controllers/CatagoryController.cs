@@ -3,6 +3,7 @@ using BMS.Models.BaseModels;
 using BMS.Models.ViewModels;
 using BMS.Repository;
 using System;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -14,7 +15,7 @@ namespace BMS.Controllers
         private readonly ProjectDbContext _db = new ProjectDbContext();
 
         public ActionResult Index()
-        {       
+        {
             return View();
         }
         #region Catagory Setup
@@ -23,7 +24,7 @@ namespace BMS.Controllers
         {
             var model = new CatagoryVm();
             return View(model);
-          
+
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -31,7 +32,7 @@ namespace BMS.Controllers
         {
 
             ViewBag.Message = "";
-           // bool IsAdded = false;
+            // bool IsAdded = false;
             var mode = new CatagoryVm()
             {
                 Name = "",
@@ -40,22 +41,25 @@ namespace BMS.Controllers
 
             if (ModelState.IsValid)
             {
-                var isName = IsNameAdded(model.Name);
-                var isCode = IsCodeAdded(mode.Code);
-
-                if (isName || isCode)
+                if (model.Id != 0 && model.Id > 0)
                 {
-                    return View(mode);
-                 
+                    _db.Catagories.AddOrUpdate(model);
+                    _db.SaveChanges();
                 }
                 else
                 {
+                    var isName = IsNameAdded(model.Name);
+                    var isCode = IsCodeAdded(mode.Code);
+
+                    if (isName || isCode)
+                    {
+                        return View(mode);
+
+                    }
                     _db.Catagories.Add(model);
                     _db.SaveChanges();
                     ViewBag.Message = "Added Successfully";
-
                 }
-
             }
 
             return View(mode);
@@ -80,7 +84,7 @@ namespace BMS.Controllers
 
             foreach (var item in datalist)
             {
-                if (item.Name==name)
+                if (item.Name == name)
                 {
                     isAdded = true;
                     return isAdded;
@@ -114,16 +118,16 @@ namespace BMS.Controllers
             var isFound = false;
             foreach (var item in dataList)
             {
-                if (item.Name==name)
+                if (item.Name == name)
                 {
                     isFound = true;
-                    return Json(isFound,JsonRequestBehavior.AllowGet);
+                    return Json(isFound, JsonRequestBehavior.AllowGet);
                 }
 
             }
 
-            return Json(isFound,JsonRequestBehavior.AllowGet);
-          
+            return Json(isFound, JsonRequestBehavior.AllowGet);
+
         }
         public JsonResult IsCatagoryCodeUnique(string code)
         {
@@ -142,11 +146,23 @@ namespace BMS.Controllers
 
         }
 
-        public JsonResult GetCatagory()
+        public JsonResult GetCatagory(int? id)
         {
             var datalist = _db.Catagories.ToList();
-            var jsonData = datalist.Select(c => new {c.Id, c.Code, c.Name});
-            return Json(jsonData,JsonRequestBehavior.AllowGet);
+
+            if (id != 0 && id > 0)
+            {
+                var jsonData = datalist.Where(c => c.Id == id).ToList().Select(e => new { e.Id, e.Name, e.Code });
+                return Json(jsonData, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                var jsonData = datalist.Select(c => new { c.Id, c.Code, c.Name });
+                return Json(jsonData, JsonRequestBehavior.AllowGet);
+            }
+
+
+
         }
 
         public JsonResult Delete(int id)

@@ -1,16 +1,19 @@
 ﻿$(document).ready(function () {
+
+    $("#Name").val("");
+    $("#Code").val("");
     getCatagory();
 
 });
 
+$(document.body).on("click", "#editButton", function () {
+    $("#saveButton").val("Save");
 
-//class Catagory {
-//    id = 0;
-//    name = "";
-//    code = "";
-//}
+    $("#Name").val("");
+    $("#Code").val("");
+});
 
-//let catragoryList = [];
+
 
 function getCatagory() {
     $.ajax({
@@ -21,20 +24,19 @@ function getCatagory() {
         contentType: "application/json;charset=utf-8",
         success: function (data) {
 
-            if (data !== false && data !== undefined) {
+            if (data !== false && data !== undefined && data.length>0) {
+              
                 sl = 1;
                 $.each(data, function (k, v) {
-
-                    //const list = getSelectedData(v);
-                    //if (list !== "" && list !== undefined) {
-                    //    catragoryList.push(list);
-                    //}
-                    tableRowEffect(sl, v.Name, v.Code,v.Id);
+                    tableRowEffect(sl, v.Name, v.Code, v.Id);
                     sl++;
-                   
+
                 });
             }
 
+            $("#Name").val("");
+            $("#Code").val("");
+            
         }, error: function (err) {
             alert(err);
         }
@@ -54,16 +56,41 @@ function tableRowEffect(serial, catagoryName, catagoryCode,id) {
     $("#CatsDetailsTable").append(createNewRow);
 }
 
-
 function deleteRow(id) {
     deleteFromServer(id);
     $("#CatsDetailsTable").empty();
 
-
-   
+    $("#Name").val("");
+    $("#Code").val("");
 }
 
 
+
+
+
+function editRow(id) {
+    var params = { id: id };
+    var url = "../../Catagory/GetCatagory";
+    $.post(url, params, function (data) {
+        data.forEach(c => {  
+            $("#Name").val(c.Name);
+            $("#Code").val(c.Code);
+            $("#Id").val(c.Id);
+
+            $("#saveButton").val("Edit");
+        });
+        //console.log(data)
+        //if (data !== undefined && data !== false) {
+        //    $("#Name").val(data.Name);
+        //    $("#Code").val(data.Code);
+
+        //}
+       
+    }).fail(function (err) {
+        alert(err);
+    });
+
+}
 
 
 function deleteFromServer(id) {
@@ -76,23 +103,12 @@ function deleteFromServer(id) {
         $.post(url, params, function (data) {
             data.forEach(c => {
                 tableRowEffect(++serial, c.Name, c.Code, c.Id);
-  
             });
-
-
-
         }).fail(function (err) {
             alert(err);
         });
     }
+
+    $("#Name").val("");
+    $("#Code").val("");
 }
-
-
-//function getSelectedData(v) {
-//    const model = new Catagory();
-//    model.id = v.Id;
-//    model.name = v.Name;
-//    model.code = v.Code;
-
-//    return model;
-//}
