@@ -4,6 +4,7 @@ using BMS.Models.ViewModels;
 using BMS.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -25,9 +26,9 @@ namespace BMS.Controllers
         [HttpGet]
         public ActionResult Setup()
         {
-            var model = new ProductVm()
+            var model = new Product()
             {
-                CatagoryLookUp = GetDefaultProductSelectedList(),
+                CatagoryLookUp = CatagoryListLookUp(),
             };
             return View(model);
         }
@@ -36,52 +37,37 @@ namespace BMS.Controllers
         public ActionResult Setup(Product model)
         {
             ViewBag.Message = "";
-            var mode = new ProductVm()
-            {
-                CatagoryLookUp = GetDefaultProductSelectedList(),
+      
+            var isName = IsNameAdded(model.Name);
+            var isCode = IsCodeAdded(model.Code);
 
-            };
+            if (isCode || isName || (model.ImageData==null))
+            {
+                model.CatagoryLookUp = CatagoryListLookUp();
+                return View(model);
+            }
 
             if (ModelState.IsValid)
-            {
-
-                if (model.ImageData != null)
-                {
+            {             
                     model.Photo = new byte[model.ImageData.ContentLength];
                     model.ImageData.InputStream.Read(model.Photo, 0, model.ImageData.ContentLength);
 
-                }
-                else
-                {
-                    return View(mode);
-                }
-
-                var isName = IsNameAdded(model.Name);
-                var isCode = IsCodeAdded(model.Code);
-
-                if (isName || isCode)
-                {
-                    return View(model);
-                }
-                else
-                {
-
-                    #region Save in Database
-                    _db.Products.Add(model);
-                    _db.SaveChanges();
-                    #endregion
-
-
+                    if (model.Id != 0 && model.Id > 0)
+                    {
+                        _db.Products.AddOrUpdate(model);
+                        _db.SaveChanges();
+                    }
+                    else
+                    { 
+                        _db.Products.Add(model);
+                        _db.SaveChanges();
+                      
+                    }
                     ViewBag.Message = "Product Sccessfully Added !";
-                }
-
-
-
-
             }
 
-          
-            return View(mode);
+            model.CatagoryLookUp = CatagoryListLookUp();
+            return View(model);
         }
         #endregion
 
@@ -183,7 +169,7 @@ namespace BMS.Controllers
 
           
             var datalist = _db.Products.ToList();
-            var jsoData = datalist.Select(c => new { c.Id, c.Name, c.UnitPrice, c.CostPrice, c.Description, c.ReorderLevel, PhotoStr = ConvertByteToBase64String(c.Photo) });
+            var jsoData = datalist.Select(c => new { c.Id, c.Name,c.Code, c.UnitPrice, c.CostPrice, c.Description, c.ReorderLevel, PhotoStr = ConvertByteToBase64String(c.Photo), c.ImageData});
             return Json(jsoData, JsonRequestBehavior.AllowGet);
 
            
@@ -201,8 +187,6 @@ namespace BMS.Controllers
             return null;
         }
 
-
-
         public JsonResult Delete(int id)
         {
             try
@@ -219,5 +203,22 @@ namespace BMS.Controllers
                 throw ex;
             }
         }
+        public List<SelectListItem> CatagoryListLookUp()
+        {
+            var dataList = _db.Catagories.ToList();
+            var selectedList = new List<SelectListItem>();
+            selectedList.AddRange(GetDefaultProductSelectedList());
+            foreach (var item in dataList)
+            {
+                var data = new SelectListItem()
+                {
+                    Value = item.Id.ToString(),
+                    Text = item.Name
+                };
+                selectedList.Add(data);
+            }
+            return selectedList;
+        }
+
     }
 }

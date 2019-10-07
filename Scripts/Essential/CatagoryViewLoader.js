@@ -1,4 +1,7 @@
-﻿$(document).ready(function () {
+﻿
+
+
+$(document).ready(function () {
 
     $("#Name").val("");
     $("#Code").val("");
@@ -24,8 +27,8 @@ function getCatagory() {
         contentType: "application/json;charset=utf-8",
         success: function (data) {
 
-            if (data !== false && data !== undefined && data.length>0) {
-              
+            if (data !== false && data !== undefined && data.length > 0) {
+
                 sl = 1;
                 $.each(data, function (k, v) {
                     tableRowEffect(sl, v.Name, v.Code, v.Id);
@@ -36,7 +39,7 @@ function getCatagory() {
 
             $("#Name").val("");
             $("#Code").val("");
-            
+
         }, error: function (err) {
             alert(err);
         }
@@ -44,7 +47,7 @@ function getCatagory() {
 }
 
 
-function tableRowEffect(serial, catagoryName, catagoryCode,id) {
+function tableRowEffect(serial, catagoryName, catagoryCode, id) {
 
     var serialCell = "<td>" + serial++ + "</td>";
     var catagoryNameCell = "<td  id='catagoryName" + serial + "' name='Catagories[" + serial + "].Name' value='" + catagoryName + "'>" + catagoryName + "</td>";
@@ -72,20 +75,15 @@ function editRow(id) {
     var params = { id: id };
     var url = "../../Catagory/GetCatagory";
     $.post(url, params, function (data) {
-        data.forEach(c => {  
+        data.forEach(c => {
             $("#Name").val(c.Name);
             $("#Code").val(c.Code);
             $("#Id").val(c.Id);
 
             $("#saveButton").val("Edit");
         });
-        //console.log(data)
-        //if (data !== undefined && data !== false) {
-        //    $("#Name").val(data.Name);
-        //    $("#Code").val(data.Code);
 
-        //}
-       
+
     }).fail(function (err) {
         alert(err);
     });
@@ -97,7 +95,7 @@ function deleteFromServer(id) {
 
     var serial = 0;
     if (confirm('Are You Sure to Delete?') === true) {
-       
+
         var params = { id: id };
         var url = "../../Catagory/Delete";
         $.post(url, params, function (data) {

@@ -175,16 +175,6 @@ namespace BMS.Controllers
             return selectList;
         }
 
-        //public JsonResult GetProducts()
-        //{
-        //    var datalist = _db.Products.ToList();
-        //    var jsonData = datalist.Select(c => new {c.Id, c.Name, c.UnitPrice, c.CostPrice});
-        //    return Json(jsonData, JsonRequestBehavior.AllowGet);
-        //}
-
-
-
-
         public ActionResult View()
         {
             return View();

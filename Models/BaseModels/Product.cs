@@ -29,7 +29,7 @@ namespace BMS.Models.BaseModels
         public virtual Catagory Catagory { get; set; }
 
         [NotMapped]
-        public IEnumerable<SelectListItem> CatagoryLookUp { get; set; }
+        public ICollection<SelectListItem> CatagoryLookUp { get; set; }
         [NotMapped]
         public HttpPostedFileBase ImageData { get; set; }
     }
