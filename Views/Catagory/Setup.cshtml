@@ -1,149 +1,152 @@
 ﻿@model BMS.Models.ViewModels.CatagoryVm
 <hr />
+
 <div class="row">
-    @using (Html.BeginForm("Setup", "Catagory", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <div class="col-md-4 col-md-offset-4">
+
+    <div class="col-md-4 col-md-offset-1">
+        <div class="panel panel-primary">
+
+            <div class="panel-body">
+                <h2 align="center" @*class="bg-warning"*@>CREATE CATAGORY</h2>
+                <div class="col-md-6 col-md-offset-3">
+
+                    @using (Html.BeginForm("Setup", "Catagory", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading" style="background-color:teal">
+                                        <div class="panel-title ">
+                                            Catagory Entry
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <div class="form-group" hidden>
+                                            @Html.EditorFor(model => model.Id);
+                                        </div>
+
+
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                                <label id="Name_warning_label"></label>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-8">
+                                                @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                                <label id="Code_warning_label"></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-4 col-md-offset-2">
+                                                <input type="submit" value="Save" id="saveButton" class="btn btn-primary" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+
+
+
+
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+            <div class="col-md-6">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="panel-title ">
-                            Catagory Entry
-                        </div>
-                    </div>
+
                     <div class="panel-body">
+                        <h2 align="center" @*class="bg-warning"*@>TOATL CATAGORY VIEW</h2>
+                        <div class="col-md-8 col-md-offset-2">
 
-                        <div class="form-group" hidden>
-                            @Html.EditorFor(model => model.Id);
-                        </div>
+                            <table class="table table-bordered table-striped table-responsive table-hover">
+                                <thead>
+                                    <tr style="background-color:teal;color:white;font-weight:bold" align="center">
+                                        <td>Serial No</td>
+                                        <td>Catagory Name</td>
+                                        <td>Code Number</td>
+                                        <td>Option</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="CatsDetailsTable"></tbody>
+                            </table>
 
-
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-8">
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                                <label id="Name_warning_label"></label>
-                            </div>
-
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-8">
-                                @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
-                                <label id="Code_warning_label"></label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-4 col-md-offset-2">
-                                <input type="submit" value="Save" id="saveButton" class="btn btn-primary" />
-                            </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
-            <!--Here Dynamic Table where instant data will be load-->
-            @*<div class="col-md-4 col-md-offset-4" >
-                    <table class="table table-responsive bg-info">
-                        <thead>
-                            <tr>
-                                <th style="color:black">Sl</th>
-                                <th style="color:black">Name</th>
-                                <th style="color:black">Code</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>*@
-            <!--Dynamic Table Close-->
-            <hr />
+        </div>
 
 
+        <div class="row">
+            @if (ViewBag.Message == "Added Successfully")
+            {
 
+                <div class="green">
+                    <p><strong>Success:</strong> @ViewBag.Message</p>
+                </div>
+            }
 
         </div>
-    }
-</div>
+
+        @*<div class="row">
+            <h4 align="center" class="bg-info">Our all catagories</h4>
+            <div class="col-md-8 col-md-offset-2">
+
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr>
+                            <th style="color:black">Serial No</th>
+                            <th style="color:black">Catagory Name</th>
+                            <th style="color:black"> Code Number</th>
+                            <th style="color:forestgreen" align="center">Option</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="serial_no">001</td>
+                            <td id="catagory_name">Mobile Phone</td>
+                            <td id="catagory_code">0112P</td>
+                            <td align="center" id="options"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>*@
 
 
 
+        @section Scripts {
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+            <script src="~/Scripts/Essential/CatagoryScript.js"></script>
 
-<div class="row">
-    <h2 align="center" class="bg-warning">TOATL CATAGORY VIEW</h2>
-    <div class="col-md-8 col-md-offset-2">
-
-        <table class="table table-bordered table-striped table-responsive table-hover">
-            <thead>
-                <tr style="background-color:teal;color:white;font-weight:bold" align="center">
-                    <td>Serial No</td>
-                    <td>Catagory Name</td>
-                    <td>Code Number</td>
-                    <td>Option</td>
-                </tr>
-            </thead>
-            <tbody id="CatsDetailsTable"></tbody>
-        </table>
-
-    </div>
-</div>
-
-<div class="row">
-    @if (ViewBag.Message == "Added Successfully")
-    {
-
-        <div class="green">
-            <p><strong>Success:</strong> @ViewBag.Message</p>
-        </div>
-    }
-
-</div>
-
-@*<div class="row">
-        <h4 align="center" class="bg-info">Our all catagories</h4>
-        <div class="col-md-8 col-md-offset-2">
-
-            <table class="table table-bordered ">
-                <thead>
-                    <tr>
-                        <th style="color:black">Serial No</th>
-                        <th style="color:black">Catagory Name</th>
-                        <th style="color:black"> Code Number</th>
-                        <th style="color:forestgreen" align="center">Option</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td id="serial_no">001</td>
-                        <td id="catagory_name">Mobile Phone</td>
-                        <td id="catagory_code">0112P</td>
-                        <td align="center" id="options"></td>
-                    </tr>
-
-                </tbody>
-            </table>
-
-        </div>
-    </div>*@
-
-
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/Essential/CatagoryScript.js"></script>
-
-    <script src="~/Scripts/Essential/CatagoryViewLoader.js"></script>
-}
+            <script src="~/Scripts/Essential/CatagoryViewLoader.js"></script>
+        }

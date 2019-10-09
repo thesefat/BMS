@@ -8,99 +8,117 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-<nav class="navbar navbar-fixed-top navbar-default" style="background-color:whitesmoke">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            @*<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>*@
-            <a class="navbar-brand"  style="background: whitesmoke" href="@Url.Action("Index","Home")">Business Managment System</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right col-md-offset-6 col-md-8">
+    <nav class="navbar navbar-fixed-top navbar-default" style="background-color:whitesmoke">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                @*<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>*@
+                <a class="navbar-brand" style="background: whitesmoke" href="@Url.Action("Index","Home")">Business Managment System</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right col-md-offset-6 col-md-8">
 
-                <!--Catagory-->
-                <li class="dropdown" style="background: whitesmoke">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Catagory <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Setup", "Setup", "Catagory")</li>
-                        <li>@Html.ActionLink("View", "AllCatagoryView", "Catagory")</li>
+                    <!--Catagory-->
+                    <li class="dropdown" style="background: whitesmoke">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Catagory <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Setup", "Setup", "Catagory")</li>
+                            <li>@Html.ActionLink("View", "AllCatagoryView", "Catagory")</li>
 
-                    </ul>
-                </li>
-
-
-                <!--Product-->
-                <li class="dropdown" style="background-color:whitesmoke">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Products <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Setup", "Setup", "Product")</li>
-                        <li>@Html.ActionLink("View", "ProductsView", "Product")</li>
-                    </ul>
-                </li>
-
-                <!--Sale-->
-                <li class="dropdown"  style="background-color:whitesmoke">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Sale <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Product Sale", "ProductSale", "Sale")</li>
-
-                    </ul>
-                </li>
-
-                <!--Stock-->
-                <li class="dropdown"  style="background-color:whitesmoke">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Stock <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Create New </a></li>
-                        <li><a href="#">View </a></li>
-
-                    </ul>
-                </li>
-
-                <!--Supplier-->
-                <li class="dropdown"  style="background-color:whitesmoke">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Supplier <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Registration", "Registration", "Buyers")</li>
-                        <li>@Html.ActionLink("Purchase", "Create", "Purchase")</li>
-                        <li>@Html.ActionLink("View", "SuplierList", "Buyers")</li>
-                    </ul>
-                </li>
-
-                <!--Customer-->
-                <li class="dropdown"  style="background-color:whitesmoke">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Customer <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Registration", "Registration", "Customer")</li>
-                        <li>@Html.ActionLink("View", "CustomerList", "Customer")</li>
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 
 
-            </ul>
-            @*<ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                <li><a href="../navbar-static-top/">Static top</a></li>
-                <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-            </ul>*@
-        </div><!--/.nav-collapse -->
-    </div><!--/.container-fluid -->
-</nav>
+                    <!--Product-->
+                    <li class="dropdown" style="background-color:whitesmoke">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Products <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Setup", "Setup", "Product")</li>
+                            <li>@Html.ActionLink("View", "ProductsView", "Product")</li>
+                        </ul>
+                    </li>
+
+                    <!--Sale-->
+                    <li class="dropdown" style="background-color:whitesmoke">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Sale <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Product Sale", "ProductSale", "Sale")</li>
+
+                        </ul>
+                    </li>
+
+                    <!--Stock-->
+                    <li class="dropdown" style="background-color:whitesmoke">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Stock <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Create New </a></li>
+                            <li><a href="#">View </a></li>
+
+                        </ul>
+                    </li>
+
+                    <!--Supplier-->
+                    <li class="dropdown" style="background-color:whitesmoke">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Supplier <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Registration", "Registration", "Buyers")</li>
+                            <li>@Html.ActionLink("Purchase", "Create", "Purchase")</li>
+                            <li>@Html.ActionLink("View", "SuplierList", "Buyers")</li>
+                        </ul>
+                    </li>
+
+                    <!--Customer-->
+                    <li class="dropdown" style="background-color:whitesmoke">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Customer <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Registration", "Registration", "Customer")</li>
+                            <li>@Html.ActionLink("View", "CustomerList", "Customer")</li>
+                        </ul>
+                    </li>
 
 
-<div class="container body-content">
-    @RenderBody()
+                </ul>
+                @*<ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
+                        <li><a href="../navbar-static-top/">Static top</a></li>
+                        <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+                    </ul>*@
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-</div>
 
-  
+    <div class="container-fluid body-content">
+        @RenderBody()
 
-@RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+    </div>
+
+
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color:teal;
+            color: white;
+            text-align: center;
+            height:6%;
+        }
+    </style>
+
+    <div class="footer">
+        <h4 align="right"> Business Management System </h4>
+        <h5 align="right"> Developed by - Sefat Anam </h5>
+
+    </div>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>
