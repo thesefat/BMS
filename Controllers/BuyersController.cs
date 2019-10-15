@@ -2,6 +2,7 @@
 using BMS.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,66 +22,52 @@ namespace BMS.Controllers
         #region Registration of Supplier
 
         [HttpGet]
-        public ActionResult Registration()
+        public ActionResult Create()
         {
-            var model = new Supplier()
-            {
-                Name = "",
-                Code = "",
-                Photo = null,
-                Email = "",
-                Address = "",
-                ContactNo = "",
-                ContactPerson = ""
-
-            };
+            var model = new Supplier();
             return View(model);
            
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Registration(Supplier model)
+        public ActionResult Create(Supplier model)
         {
+            
+
             ViewBag.Message = "";
-           
+
+            var isName = IsNameAdded(model.Name);
+            var isCode = IsCodeAdded(model.Code);
+
+            if (isCode || isName || (model.ImageData == null))
+            {
+               
+                return View(model);
+            }
 
             if (ModelState.IsValid)
             {
+                model.Photo = new byte[model.ImageData.ContentLength];
+                model.ImageData.InputStream.Read(model.Photo, 0, model.ImageData.ContentLength);
 
-                if (model.ImageData != null)
+                if (model.Id != 0 && model.Id > 0)
                 {
-                    model.Photo = new byte[model.ImageData.ContentLength];
-                    model.ImageData.InputStream.Read(model.Photo, 0, model.ImageData.ContentLength);
-
+                    _db.Supliers.AddOrUpdate(model);
+                    _db.SaveChanges();
                 }
                 else
                 {
-                    return View(model);
-                }
-
-                var isName = IsNameAdded(model.Name);
-                var isCode = IsCodeAdded(model.Code);
-
-                if (isName || isCode)
-                {
-                    return View(model);
-                }
-                else
-                {
-
-                    #region Save in Database
                     _db.Supliers.Add(model);
                     _db.SaveChanges();
-                    #endregion
 
-
-                    ViewBag.Message = "Supplier Sccessfully Added !";
                 }
-
+                ViewBag.Message = "Product Sccessfully Added !";
             }
 
-            
-            return View();
+            model = new Supplier();
+            return View(model);
+          
+
         }
 
         #endregion

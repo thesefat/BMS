@@ -28,8 +28,6 @@ function getAllSuplier() {
 }
 
 
-
-
 function tableRowEffect(serial, suplierName, suplierContact, suplierEmail, suplierAddress, suplierCode,suplierPhoto,id) {
 
 
@@ -52,14 +50,11 @@ function tableRowEffect(serial, suplierName, suplierContact, suplierEmail, supli
 }
 
 
-
 function deleteRow(id) {
     deleteFromServer(id);
     $("#SuplierDetailsTable").empty();
 
 }
-
-
 
 
 function deleteFromServer(id) {
@@ -74,11 +69,46 @@ function deleteFromServer(id) {
                 tableRowEffect(++serial, c.Name, c.ContactNo, c.Email, c.Address, c.Code, c.PhotoStr, c.Id);
             });
 
-
-
         }).fail(function (err) {
             alert(err);
         });
     }
 }
 
+
+
+
+
+
+function editRow(id) {
+    var params = { id: id };
+    var url = "../../Buyers/GetAllSuplier";
+    $.post(url, params, function (data) {
+        data.forEach(c => {
+
+
+
+
+
+            $("#Name").val(c.Name);
+            $("#Code").val(c.Code);
+
+            $('#ContactNo').val(c.ContactNo);
+
+            $('#Email').val(c.Email);
+
+            $('#Address').val(c.Address);
+            $('#ContactPerson').val(c.ContactPerson);
+           
+
+            $("#saveButton").val("Edit");
+            $("#table").hide();
+
+        });
+
+
+    }).fail(function (err) {
+        alert(err);
+    });
+
+}

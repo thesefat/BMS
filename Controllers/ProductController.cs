@@ -169,7 +169,7 @@ namespace BMS.Controllers
 
           
             var datalist = _db.Products.ToList();
-            var jsoData = datalist.Select(c => new { c.Id, c.Name,c.Code, c.UnitPrice, c.CostPrice, c.Description, c.ReorderLevel, PhotoStr = ConvertByteToBase64String(c.Photo), c.ImageData});
+            var jsoData = datalist.Select(c => new { c.Id, c.Name,c.Code, c.UnitPrice, c.CostPrice, c.Description, c.ReorderLevel, PhotoStr = ConvertByteToBase64String(c.Photo), c.CatagoryId});
             return Json(jsoData, JsonRequestBehavior.AllowGet);
 
            

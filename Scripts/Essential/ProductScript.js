@@ -186,7 +186,7 @@ function editRow(id) {
 
 
 
-
+            $("#myTable").find("button").attr("disabled", "disabled");
             $("#Name").val(c.Name);
             $("#Code").val(c.Code);
             $("#CatagoryId").val(c.CatagoryId);
@@ -194,9 +194,11 @@ function editRow(id) {
             $('#UnitPrice').val(c.UnitPrice);
             $('#CostPrice').val(c.CostPrice);
             $('#Description').val(c.Description);
-            $('#ImageData').hide();
+            $('#ImageData').val(c.ImageData);
 
             $("#saveButton").val("Edit");
+    
+       
         });
 
 

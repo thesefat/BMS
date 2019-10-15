@@ -2,6 +2,7 @@
 using BMS.Models.ViewModels;
 using BMS.Repository;
 using System;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -15,68 +16,49 @@ namespace BMS.Controllers
         #region Registration of Customer
 
         [HttpGet]
-        public ActionResult Registration()
+        public ActionResult Create()
         {
-            var model = new Customer()
-            {
-                
-                Name ="",
-                Email = "",
-                Code = "",
-                Photo = null,
-                LoyaltyPoint = 0.0,
-                Address = ""
-
-            };
+            var model = new Customer();
+            
            
             return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Registration(Customer model)
+        public ActionResult Create(Customer model)
         {
+
+
             ViewBag.Message = "";
-         
-            if (ModelState.IsValid)
+
+            var isName = IsNameAdded(model.Name);
+            var isCode = IsCodeAdded(model.Code);
+
+            if (isCode || isName || (model.ImageData == null))
             {
 
-                if (model.ImageData != null)
-                {
-                    model.Photo = new byte[model.ImageData.ContentLength];
-                    model.ImageData.InputStream.Read(model.Photo, 0, model.ImageData.ContentLength);
+                return View(model);
+            }
 
+            if (ModelState.IsValid)
+            {
+                model.Photo = new byte[model.ImageData.ContentLength];
+                model.ImageData.InputStream.Read(model.Photo, 0, model.ImageData.ContentLength);
+
+                if (model.Id != 0 && model.Id > 0)
+                {
+                    _db.Customers.AddOrUpdate(model);
+                    _db.SaveChanges();
                 }
                 else
                 {
-                    ViewBag.Message = "Image Data is Illigal";
-                    return View(model);
-                }
-
-                var isName = IsNameAdded(model.Name);
-                var isCode = IsCodeAdded(model.Code);
-                var isEmail = IsEmailAdded(model.Email);
-                var isNumber = IsPhoneNumberAdded(model.ContactNo);
-
-                if (isName || isCode|| isEmail || isNumber)
-                {
-                    return View(model);
-                }
-                else
-                {
-
-                    #region Save in Database
                     _db.Customers.Add(model);
                     _db.SaveChanges();
-                    #endregion
 
-
-                    ViewBag.Message = "Product Sccessfully Added !";
                 }
-
-
-
-
+                ViewBag.Message = "Product Sccessfully Added !";
             }
+
 
             model = new Customer();
 
@@ -246,7 +228,7 @@ namespace BMS.Controllers
 
 
             var datalist = _db.Customers.ToList();
-            var jsoData = datalist.Select(c => new { c.Id, c.Name, c.ContactNo, c.Email, c.LoyaltyPoint, PhotoStr = ConvertByteToBase64String(c.Photo) });
+            var jsoData = datalist.Select(c => new { c.Id, c.Name, c.ContactNo, c.Email, c.LoyaltyPoint, PhotoStr = ConvertByteToBase64String(c.Photo) ,c.Address,c.Code});
             return Json(jsoData, JsonRequestBehavior.AllowGet);
 
 
@@ -264,5 +246,24 @@ namespace BMS.Controllers
             return null;
         }
         #endregion
+
+
+
+        public JsonResult Delete(int id)
+        {
+            try
+            {
+                Customer data = _db.Customers.Where(c => c.Id == id).FirstOrDefault();
+                _db.Customers.Remove(data);
+                _db.SaveChanges();
+                var datalist = _db.Customers.ToList();
+                var jsondata = datalist.Select(c => new { c.Id, c.Name, c.Address, c.ContactNo, c.Email, c.Code, PhotoStr = ConvertByteToBase64String(c.Photo) });
+                return Json(jsondata, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -3,13 +3,13 @@
 
 <br />
 <div class="row">
-    <div class="col-md-10 col-md-offset-2">
+    <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-info">
             <div class="panel-heading">
                 <div class="panel-title"> Registration of Customer </div>
             </div>
             <div class="panel-body">
-                @using (Html.BeginForm("Registration", "Customer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("Create", "Customer", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
 
@@ -84,7 +84,7 @@
 
                         <div class="form-group">
                             <div class="col-md-offset-6 col-md-4">
-                                <input type="submit" value="Create" class="btn btn-default" />
+                                <input type="submit" value="Create" id="saveButton" class="btn btn-default" />
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,38 @@
             </div>
         </div>
     </div>
+
+    <div class="col-md-10 col-md-offset-1" id="table">
+        <h2 align="center"> CUSTOMERS LIST</h2>
+        <div class="col-md-12">
+
+            <table class="table table-bordered table-striped table-hover table-responsive ">
+                <thead>
+                    <tr align="center" style="background-color:teal;color:white;font-weight:bold">
+                        <td>Serial No</td>
+                        <td>Customer Name</td>
+                        <td>Contact No</td>
+                        <td>Email</td>
+                        <td>Loyality Point</td>
+                        <td>Image</td>
+                        <td>Options</td>
+
+                    </tr>
+                </thead>
+                <tbody id="CustomerDetailsTable">  </tbody>
+              
+            </table>
+
+        </div>
+    </div>
 </div>
+
+
+
+
+
+
+
 
 <div class="row">
     @if (ViewBag.Message == "Added Successfully")
@@ -118,6 +149,8 @@
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery-3.3.1.js"></script>
     <script src="~/Scripts/Essential/CustomerValidation.js"></script>
+    <script src="~/Scripts/Essential/CustomerViewLoader.js"></script>
+
+
 }
