@@ -37,10 +37,22 @@ namespace BMS.Controllers
         public ActionResult Create(Purchase purchase)
         {
 
+            purchase.ProductLookUp = ProductListLookUp();
+            purchase.SupplierLookUp = SupplierListLookUp();
+
+
+            Purchase p = new Purchase()
+            {
+                ProductId = 1,
+                SupplierId = 1,
+                PurchaseDate = DateTime.Now
+            };
+
             if (ModelState.IsValid)
             {
                 //_db.PurchaseDetails.Add(purchaseDetails);
-                _db.Purchases.Add(purchase);
+                _db.Purchases.Add(p);
+
                 var isAdded = _db.SaveChanges() > 0;
                 if (isAdded)
                 {
@@ -49,8 +61,6 @@ namespace BMS.Controllers
 
             }
 
-            purchase.ProductLookUp = ProductListLookUp();
-            purchase.SupplierLookUp = SupplierListLookUp();
             return View(purchase);
 
 

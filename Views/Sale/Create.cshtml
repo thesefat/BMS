@@ -1,0 +1,210 @@
+﻿@model BMS.Models.BaseModels.Sale
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel-body">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="panel-title">Selects Customer</div>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.CustomerId, "Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(model => model.CustomerId, Model.CustomerLookUp, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.PurchaseDate, "Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+
+                                        @Html.TextBoxFor(m => m.PurchaseDate, "Date", htmlAttributes: new { @class = "form-control", type = "date" })
+
+                                      <label id="dateAlert"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.Label("LoyalityPoint", "L.Point", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.TextBox("LoyalityPoint", null, htmlAttributes: new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+<br />
+        <div class="row">
+
+            <div class="col-md-10 col-md-offset-1">
+   
+                    <div class="panel panel-primary">
+                        <div class="panel-heading ">
+                            <div class="panel-title">Selects Product</div>
+                        </div>
+                        @*<br />
+                        <div class="panel panel-primary">
+                            <h5 align="center"> Select Customer</h5>
+                            <div class="panel-body">
+
+                                <div class="row">
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.CustomerId, "Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.DropDownListFor(model => model.CustomerId, Model.CustomerLookUp, new { @class = "form-control" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.PurchaseDate, "Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+
+                                                @Html.TextBoxFor(m => m.PurchaseDate, "Date", htmlAttributes: new { @class = "form-control", type = "date" })
+
+                                                @Html.ValidationMessageFor(model => model.PurchaseDate, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.LoyalityPoint, "L.Point", htmlAttributes: new { @class = "control-label col-md-2" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.LoyalityPoint, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.LoyalityPoint, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>*@
+                        <div class="panel-body">
+
+                            <div class="form-group">
+                                @Html.Label("ProductName", "Name", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+
+                                    @Html.DropDownList("ProductName", Model.ProductLookUp, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("InStock", "In Stock", htmlAttributes: new { @class = "control-label col-md-4 disabled" })
+                                <div class="col-md-8">
+
+                                    @Html.TextBox("InStock", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("SaleQuantity", "Sale Quantity", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+
+                                    @Html.TextBox("SaleQuantity", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("UnitPrice", "Unit Price", htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+
+                                    @Html.TextBox("UnitPrice", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-offset-6 col-md-10">
+                                <input type="button" value="Add" id="AddButton" class="btn btn-default" />
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="form-group">
+
+                            <div class="col-md-10 col-md-offset-1">
+                                <h2 align="center" style="background-color:teal;color:white;font-weight:bold"> Sales Details</h2>
+
+
+
+                                <table class="table table-bordered table-striped table-hover table-responsive ">
+                                    <thead>
+                                        <tr align="center" style="background-color:teal;color:white;font-weight:bold">
+                                            <td>Serial No</td>
+                                            <td>Product Name</td>
+                                            <td>Quantity</td>
+                                            <td>Unit Price</td>
+                                            <td>Total Price</td>
+
+                                            <td>Option</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ProductsDetailsTable">
+                                    </tbody>
+                                </table>
+                            </div>
+                           
+                            <div class="col-md-4 col-md-offset-6">
+                                <input  type="submit" id="submitButton" class="btn btn-success" value="Save"/>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+            
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/Essential/Sale/TextBoxValidation.js"></script>
+    <script src="~/Scripts/Essential/Sale/SaleCreate.js"></script>
+    <script src="~/Scripts/Models/SaleDetail.js"></script>
+}

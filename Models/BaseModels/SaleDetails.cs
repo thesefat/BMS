@@ -10,12 +10,13 @@ namespace BMS.Models.BaseModels
     public class SaleDetails
     {
         public long Id { get; set; }
+        public long SaleId { get; set; }
         public long ProductId { get; set; }
-        public string Name { get; set; }
-        public double Quantiy { get; set; }
+        public double Qty { get; set; }
         public double UnitPrice { get; set; }
-        public double LineTotal { get; set; }
+        public double TotalPrice => Qty * UnitPrice;
         public virtual Product Product { get; set; }
+        public virtual Sale Sale { get; set; }
 
        
 
