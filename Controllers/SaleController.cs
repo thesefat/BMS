@@ -33,7 +33,7 @@ namespace BMS.Controllers
             return View(model);
         }
 
-        [HttpGet]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Sale sale)
         {

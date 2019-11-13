@@ -2,6 +2,7 @@
 
     <div class="row col-md-10 col-md-offset-1">
         <br />
+
         <div class="col-md-5">
 
             <div class="panel panel-primary ">
@@ -108,8 +109,6 @@
             </div>
 
         </div>
-
-
         <div class="col-md-7" >
             <div class="panel panel-primary" >
                 <div class="panel-body">
@@ -134,45 +133,24 @@
 
                         </table>
                         <div>
-
-                 
-
                 </div>
-
-
-
-
-
-
-           
-
-
         </div>
-
-
-
-
     </div>
+            
 
-
-@*<div class="row">
- 
-</div>*@
-
-
-
-
+</div>
 
 <div class="row">
+   
     @if (ViewBag.Message == "Product Sccessfully Added !")
-    {
+     {
 
         <div class="green">
             <p style="color:green"><strong>Success:</strong> @ViewBag.Message</p>
         </div>
-    }
+     }
 </div>
-
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jquery")

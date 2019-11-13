@@ -5,7 +5,27 @@
 //});
 $(document).ready(function () {
     getProducts();
+    $("#Name").val("");
+    $("#Code").val("");
+    $("#Catagory").val("");
+    $("#CostPrice").val("");
+    $("#Description").val("");
+    $("#ImageData").val("");
+    $("#UnitPrice").val("");
+    $("#ReorderLevel").val("");
 });
+
+//$("#saveButton").click(function () {
+//    //$("#Name").val("");
+//    //$("#Code").val("");
+//    //$("#Catagory").val("");
+//    //$("#CostPrice").val("");
+//    //$("#Description").val("");
+//    //$("#ImageData").val("");
+//    //$("#UnitPrice").val("");
+//    //$("#ReorderLevel").val("");
+
+//});
 
 function actionLoader(selector) {
     $(selector).append(`<button type="button" class="btn btn-success" id="Edit">
@@ -145,7 +165,6 @@ function tableRowEffect(serial, productName, productUnitPrice, productCostPrice,
 
 }
 
-
 function deleteRow(id) {
     deleteFromServer(id);
     $("#ProductsDetailsTable").empty();
@@ -174,8 +193,6 @@ function deleteFromServer(id) {
         });
     }
 }
-
-
 
 function editRow(id) {
     var params = { id: id };
